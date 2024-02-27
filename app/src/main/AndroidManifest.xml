@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Androidfundamentals"
+        tools:targetApi="31">
+        <activity
+            android:name=".topics.t3_passdatabetweenactivities.ResultProducingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t3_passdatabetweenactivities.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t1_recyclerview.RecyclerViewExActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t2_savedinstancestate.SavedInstanceStateCounterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
