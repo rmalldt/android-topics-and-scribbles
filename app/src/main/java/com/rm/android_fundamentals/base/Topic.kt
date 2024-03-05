@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.rm.android_fundamentals.topics.t1_recyclerview.RecyclerViewExActivity
 import com.rm.android_fundamentals.topics.t2_savedinstancestate.SavedInstanceStateCounterActivity
 import com.rm.android_fundamentals.topics.t3_passdatabetweenactivities.ResultActivity
+import com.rm.android_fundamentals.topics.t4_intents.IntentActivity
 
 data class Topic(
     val description: String,
@@ -13,10 +14,13 @@ data class Topic(
 const val topic1Description = "1. Recycler view"
 const val topic2Description = "2. Saved instance state"
 const val topic3Description = "3. Start activity for result"
+const val topic4Description = "4. Intents"
+
 
 
 val topicsList = listOf(
     Topic(topic1Description, RecyclerViewExActivity::class.java),
     Topic(topic2Description, SavedInstanceStateCounterActivity::class.java),
-    Topic(topic3Description, ResultActivity::class.java)
+    Topic(topic3Description, ResultActivity::class.java),
+    Topic(topic4Description, IntentActivity::class.java)
 )

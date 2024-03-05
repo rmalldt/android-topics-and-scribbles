@@ -2,6 +2,7 @@ package com.rm.android_fundamentals
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +11,7 @@ import com.rm.android_fundamentals.base.Topic
 import com.rm.android_fundamentals.base.TopicAdapter
 import com.rm.android_fundamentals.base.topicsList
 import com.rm.android_fundamentals.databinding.ActivityMainBinding
+import java.time.Duration
 
 class MainActivity : BaseActivity() {
 
@@ -33,10 +35,9 @@ class MainActivity : BaseActivity() {
     }
 
     private fun onTopicClickedListener(): (Topic) -> Unit = {
-        val intent = Intent(applicationContext, it.targetActivity)
+        val intent = Intent(this, it.targetActivity)
         startActivity(intent)
     }
-
 
     private fun initItemDecorator(): DividerItemDecoration {
         val itemDecorator = DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL)
