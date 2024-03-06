@@ -55,8 +55,8 @@ class SavedInstanceStateCounterActivity : BaseActivity() {
     override fun getTitleToolbar() = "Android fundamentals"
 
     companion object {
-        val NUM_KEY = "savedInt"
-        val NAME_KEY = "savedName"
-        val SUBJECT_KEY = "savedSubject"
+        const val NUM_KEY = "savedInt"
+        const val NAME_KEY = "savedName"
+        const val SUBJECT_KEY = "savedSubject"
     }
 }

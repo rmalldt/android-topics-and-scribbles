@@ -1,8 +1,8 @@
 package com.rm.android_fundamentals.topics.t4_intents
 
-import android.Manifest.permission
-import android.content.ActivityNotFoundException
+import android.Manifest
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -19,7 +19,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.rm.android_fundamentals.base.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityCommonIntentsBinding
+import com.rm.android_fundamentals.utils.hasPermission
 import com.rm.android_fundamentals.utils.toastMessage
 import java.io.File
 import java.io.FileOutputStream
@@ -28,11 +30,10 @@ import java.io.OutputStream
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class CommonIntentsActivity : AppCompatActivity() {
+class CommonIntentsActivity : BaseActivity() {
 
     private lateinit var binding: ActivityCommonIntentsBinding
     private lateinit var photoUri: Uri
-    private lateinit var photoFile: File
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +42,7 @@ class CommonIntentsActivity : AppCompatActivity() {
 
         setAlarm()
 
-        checkCameraPermissions()
+        checkPermissions()
 
         binding.btnStartCamera.setOnClickListener {
             dispatchTakePicture()
@@ -72,11 +73,16 @@ class CommonIntentsActivity : AppCompatActivity() {
             putExtra(AlarmClock.EXTRA_MINUTES, minutes)
         }
 
-        try {
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
+
+        // Alternatively, uses try-catch block
+        /*try {
             startActivity(intent)
         } catch (ex: ActivityNotFoundException) {
-            toastMessage(this@CommonIntentsActivity, "Application not found")
-        }
+            toastMessage(this@CommonIntentsActivity, "App not available")
+        }*/
     }
 
     private fun dispatchTakePicture() {
@@ -93,10 +99,12 @@ class CommonIntentsActivity : AppCompatActivity() {
     }
 
     private fun createImageFile(): File {
-        val timeStamp: String? = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HH:mm:ss"))
+        val timeStamp: String? =
+            LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HH:mm:ss"))
         val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        photoFile = File.createTempFile("JPEG_${timeStamp}", ".jpg", storageDir)
-        return photoFile
+        val imgFile = File.createTempFile("JPEG_${timeStamp}", ".jpg", storageDir)
+        Log.d("mTag", imgFile.absolutePath)
+        return imgFile
     }
 
     private val cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicture()) { imgSavedToUri ->
@@ -125,11 +133,10 @@ class CommonIntentsActivity : AppCompatActivity() {
             }
 
             val resolver = contentResolver
+
             val uri: Uri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
                 ?: throw IOException("Failed to create a new MediaStore record")
-
             outputStream = resolver.openOutputStream(uri)
-
         } else {
             val storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString()
             val image = File(storageDir, "$timeStamp.jpg")
@@ -137,46 +144,32 @@ class CommonIntentsActivity : AppCompatActivity() {
         }
 
         outputStream?.use {
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 95, it)
         }
     }
 
-    private fun checkCameraPermissions() {
+    private fun checkPermissions() {
         val requiredPermissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            mapOf(
-                REQUEST_CAMERA_PERMISSION to permission.CAMERA,
-                READ_MEDIA_IMAGES_PERMISSION to permission.READ_MEDIA_IMAGES,
-                READ_MEDIA_VIDEO_PERMISSION to permission.READ_MEDIA_VIDEO,
-                READ_MEDIA_AUDIO_PERMISSION to permission.READ_MEDIA_AUDIO)
+            arrayOf(
+                Manifest.permission.CAMERA,
+                Manifest.permission.READ_MEDIA_IMAGES,
+                Manifest.permission.READ_MEDIA_VIDEO,
+                Manifest.permission.READ_MEDIA_AUDIO)
         } else {
-            mapOf(
-                REQUEST_CAMERA_PERMISSION to permission.CAMERA,
-                WRITE_EXTERNAL_STORAGE to permission.WRITE_EXTERNAL_STORAGE
-            )
+            arrayOf(
+                Manifest.permission.CAMERA,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
         }
-        requiredPermissions.forEach {
-            checkPermissions(this, it.value, it.key)
+
+        if (!hasPermission(this, *requiredPermissions)) {
+            ActivityCompat.requestPermissions(this, requiredPermissions, PERMISSION_CODE)
         }
     }
 
-    private fun checkPermissions(
-        appCompatActivity: AppCompatActivity,
-        permissionRequestString: String,
-        permissionCode: Int) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(
-                    appCompatActivity, permissionRequestString) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(appCompatActivity, arrayOf(permissionRequestString), permissionCode)
-            }
-        }
-    }
+    override fun getTitleToolbar(): String = "Common intents activity"
 
     companion object {
         const val DEFAULT_ALARM_MSG = "My Alarm"
-        private const val REQUEST_CAMERA_PERMISSION = 1001
-        private const val READ_MEDIA_IMAGES_PERMISSION = 1002
-        private const val READ_MEDIA_VIDEO_PERMISSION = 1003
-        private const val READ_MEDIA_AUDIO_PERMISSION = 1004
-        private const val WRITE_EXTERNAL_STORAGE = 1005
+        private const val PERMISSION_CODE = 1001
     }
 }

@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
@@ -10,14 +12,19 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- for legacy support -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- for legacy support -->
 
+    <!-- Required for resolveActivity() method -->
     <queries>
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" />
         </intent>
         <intent>
             <action android:name="android.intent.action.GET_CONTENT" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SET_ALARM" />
         </intent>
     </queries>
 
@@ -32,8 +39,11 @@
         android:theme="@style/Theme.Androidfundamentals"
         tools:targetApi="31">
         <activity
-            android:name=".topics.t4_intents.CommonIntentsActivity"
+            android:name=".topics.t5_storagetypes.StorageTypesActivity"
             android:exported="false" />
+        <activity
+            android:name=".topics.t4_intents.CommonIntentsActivity"
+            android:exported="false"></activity>
         <activity
             android:name=".topics.t4_intents.IntentResultActivity"
             android:exported="false">

@@ -114,22 +114,22 @@ class IntentActivity : BaseActivity() {
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-        builder.setContentIntent(pendingIntent)
+        builder.setContentIntent(pendingIntent) // attach notification to pending intent
 
         // Get notification manager, create notification channel and launch the notification
-        val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channelName = "channel_01"
-            val channelDescription = "Channel description"
+            val channelDescription = "channel description"
             val channel = NotificationChannel(CHANNEL_ID, channelName, NotificationManager.IMPORTANCE_HIGH)
                 .apply {
                 description = channelDescription
                 lightColor = Color.GREEN
                 enableVibration(true)
             }
+            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel)
+            manager.notify(0, builder.build())
         }
-        manager.notify(0, builder.build())
     }
 
     override fun getTitleToolbar(): String = "Intent activity"

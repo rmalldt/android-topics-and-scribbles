@@ -10,7 +10,7 @@ class CustomActivityContract : ActivityResultContract<String, Int?>() {
 
     override fun createIntent(context: Context, input: String): Intent {
         return Intent(context, ResultProducingActivity::class.java).apply {
-            toastMessage(context, "Starting activity for result with $input")
+            toastMessage(context, "Starting activity for result with input: $input")
             putExtra(ResultActivity.RESULT_KEY, input)
         }
     }
