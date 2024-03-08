@@ -10,55 +10,42 @@
         android:id="@+id/includeToolbar"
         layout="@layout/toolbar" />
 
-    <TextView
-        android:id="@+id/tvFileNameLabel"
-        android:layout_width="100dp"
+    <EditText
+        android:id="@+id/txtInputFileName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="File name:"
-        android:textSize="18sp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="File name:"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/includeToolbar" />
 
-    <TextView
-        android:id="@+id/tvFileContentLabel"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="File content:"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFileName" />
-
-    <TextView
-        android:id="@+id/tvFileName"
+    <EditText
+        android:id="@+id/txtInputFileContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="File name"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFileNameLabel" />
-
-    <TextView
-        android:id="@+id/tvFileContent"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
         android:gravity="top"
         android:hint="File content"
-        android:textSize="18sp"
+        android:scrollbars="vertical"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFileContentLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/txtInputFileName" />
+
+    <TextView
+        android:id="@+id/txtFileInfo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="File Info"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/txtInputFileContent" />
 
     <RadioGroup
         android:id="@+id/rg"
@@ -66,11 +53,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:orientation="vertical"
+        android:layout_marginTop="70dp"
         android:checkedButton="@id/rbInternal"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvFileContent">
+        app:layout_constraintTop_toBottomOf="@+id/txtFileInfo">
 
         <RadioButton
             android:id="@+id/rbInternal"
@@ -88,40 +75,66 @@
             android:id="@+id/rbExternal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="External private storage" />
+            android:text="External storage" />
 
         <RadioButton
             android:id="@+id/rbExternalCache"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="External private cache storage" />
+            android:text="External cache storage" />
 
         <RadioButton
-            android:id="@+id/rbExternalPublic"
+            android:id="@+id/rbExternalStorage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="External public storage" />
+            android:text="External storage dir" />
+
+        <RadioButton
+            android:id="@+id/rbExternalStoragePublic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="External storage public dir" />
+
+        <RadioButton
+            android:id="@+id/rbSharedPreferences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shared preferences" />
 
     </RadioGroup>
 
     <Button
-        android:id="@+id/btnCreateFile"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnListFiles"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Create File"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:text="List"
+        app:layout_constraintEnd_toStartOf="@+id/btnCreateFile"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rg" />
 
     <Button
-        android:id="@+id/btnReadFile"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnCreateFile"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Read File"
+        android:text="Write"
+        app:layout_constraintBottom_toBottomOf="@+id/btnListFiles"
+        app:layout_constraintEnd_toStartOf="@+id/btnReadFile"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnListFiles"
+        app:layout_constraintTop_toTopOf="@+id/btnListFiles" />
+
+    <Button
+        android:id="@+id/btnReadFile"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Read"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCreateFile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCreateFile" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCreateFile"
+        app:layout_constraintTop_toTopOf="@+id/btnCreateFile" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
