@@ -1,17 +1,14 @@
 package com.rm.android_fundamentals
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rm.android_fundamentals.base.BaseActivity
 import com.rm.android_fundamentals.base.Topic
+import com.rm.android_fundamentals.base.TopicActivity
 import com.rm.android_fundamentals.base.TopicAdapter
-import com.rm.android_fundamentals.base.topicsList
+import com.rm.android_fundamentals.base.topics
 import com.rm.android_fundamentals.databinding.ActivityMainBinding
-import java.time.Duration
+import com.rm.android_fundamentals.utils.initItemDecorator
 
 class MainActivity : BaseActivity() {
 
@@ -27,23 +24,17 @@ class MainActivity : BaseActivity() {
 
     private fun initRecyclerView() {
         binding.recyclerView.apply {
-            adapter = TopicAdapter(topicsList, onTopicClickedListener())
+            adapter = TopicAdapter(topics, onTopicClickedListener())
             hasFixedSize()
             layoutManager = LinearLayoutManager(this@MainActivity)
-            addItemDecoration(initItemDecorator())
+            addItemDecoration(initItemDecorator(this@MainActivity))
         }
     }
 
-    private fun onTopicClickedListener(): (Topic) -> Unit = {
-        val intent = Intent(this, it.targetActivity)
+    private fun onTopicClickedListener(): (Topic) -> Unit = { clickedTopic ->
+        val intent = TopicActivity.newIntent(this@MainActivity, clickedTopic)
         startActivity(intent)
     }
 
-    private fun initItemDecorator(): DividerItemDecoration {
-        val itemDecorator = DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL)
-        itemDecorator.setDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.recyclerview_divider)!!)
-        return itemDecorator
-    }
-
-    override fun getTitleToolbar() = "Android fundamentals"
+    override fun getTitleToolbar() = "Android Fundamentals"
 }

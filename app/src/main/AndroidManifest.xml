@@ -14,7 +14,6 @@
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- for legacy support -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- for legacy support -->
-
     <!-- Required for resolveActivity() method -->
     <queries>
         <intent>
@@ -29,6 +28,7 @@
     </queries>
 
     <application
+        android:name=".AndroidFundamentalsApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -39,13 +39,73 @@
         android:theme="@style/Theme.Androidfundamentals"
         tools:targetApi="31">
         <activity
-            android:name=".topics.t5_storagetypes.StorageTypesActivity"
+            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase5.TimeoutWithRetriesActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t4_intents.CommonIntentsActivity"
-            android:exported="false"></activity>
+            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase4.TimeoutAndRetryActivity"
+            android:exported="false" />
         <activity
-            android:name=".topics.t4_intents.IntentResultActivity"
+            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase3.PerformConcurrentNetworkRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase2.SequentialNetworkRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase2.rx.SequentialNetworkRequestsRxActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase2.callbacks.SequentialNetworkRequestsCallbacksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase1.PerformSingleNetworkRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t8_coroutinesflow.base.CoroutineUseCaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".base.TopicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t3_architecturecomponents.s4_coroutinescopes.CoroutineScopesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t8_coroutinesflow.CoroutinesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t4_appcomponents.AppComponentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t3_architecturecomponents.s3_livedata.NameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t3_architecturecomponents.s2_viewmodels.ex1.DiceRollActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t3_architecturecomponents.s1_lifecycle.withoutlifecyclecomponent.WithoutLifeCycleComponentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t3_architecturecomponents.s1_lifecycle.withlifecyclecomponent.LifecycleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.FragmentHostManualActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t2_appnavigation.s1_fragments.fragmentxmlauto.FragmentHostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t2_appnavigation.s2_viewpager.HostingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t5_intents.RedirectionIntentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t7_storagetypes.StorageTypesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t5_intents.CommonIntentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t5_intents.IntentResultActivity"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -65,19 +125,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".topics.t4_intents.IntentActivity"
+            android:name=".topics.t5_intents.IntentActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t3_passdatabetweenactivities.ResultProducingActivity"
+            android:name=".topics.t1_appentrypoints.s2_passdatabetweenactivities.ResultProducingActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t3_passdatabetweenactivities.ResultActivity"
+            android:name=".topics.t1_appentrypoints.s2_passdatabetweenactivities.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t1_recyclerview.RecyclerViewExActivity"
+            android:name=".topics.t6_viewlayouts.s1_recyclerview.RecyclerViewExActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t2_savedinstancestate.SavedInstanceStateCounterActivity"
+            android:name=".topics.t1_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity"
             android:exported="false" />
 
         <provider

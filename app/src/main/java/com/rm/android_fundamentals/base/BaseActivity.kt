@@ -20,14 +20,13 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     private fun getUpButton(): ImageView = findViewById(R.id.btnToolbarBack)
-
-    private fun getToolbarTitle(): TextView = findViewById(R.id.toolbarTitle)
+    private fun getToolbarTitleLabel(): TextView = findViewById(R.id.toolbarTitle)
 
     fun hideButton() {
         getUpButton().visibility = View.GONE
     }
 
     private fun setToolbarTitle(toolbarTitle: String) {
-        getToolbarTitle().text = toolbarTitle
+        getToolbarTitleLabel().text = toolbarTitle
     }
 }

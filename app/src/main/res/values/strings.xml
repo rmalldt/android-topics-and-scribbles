@@ -2,4 +2,11 @@
     <string name="app_name">android-fundamentals</string>
     <string name="number_txt">0</string>
     <string name="rv_item">item</string>
+
+
+    <string name="duration">Operation took %d ms</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

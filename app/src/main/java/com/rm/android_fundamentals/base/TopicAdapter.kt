@@ -10,8 +10,6 @@ class TopicAdapter(
     private val onTopicClicked: (Topic) -> Unit
 ) : RecyclerView.Adapter<TopicAdapter.ViewHolder>() {
 
-    class ViewHolder(val binding: RecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root)
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = RecyclerviewItemBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -24,7 +22,7 @@ class TopicAdapter(
     override fun getItemCount() = topics.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.textRVItem.apply {
+        holder.binding.textRvItem.apply {
             text = topics[position].description
 
             setOnClickListener {
@@ -32,4 +30,6 @@ class TopicAdapter(
             }
         }
     }
+
+    class ViewHolder(val binding: RecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root)
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".topics.t4_intents.IntentActivity">
+    tools:context=".topics.t5_intents.IntentActivity">
 
     <include
         android:id="@+id/includeToolbar"
@@ -49,6 +49,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNotification" />
+
+    <Button
+        android:id="@+id/btnRedirectionIntents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Redirection Intents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCommonIntents" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
