@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/includeToolbar" />
 
     <EditText
-        android:id="@+id/editTxtTimeOut"
+        android:id="@+id/editTxtTimeout"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

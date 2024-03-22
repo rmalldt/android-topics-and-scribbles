@@ -12,6 +12,8 @@ import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase4.TimeoutAndRetryActivity
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase5.TimeoutWithRetriesActivity
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase5.TimeoutWithRetriesViewModel
+import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase6.RoomAndCoroutineActivity
+import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase7.CalculationInBackgroundActivity
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -30,12 +32,11 @@ const val useCase2UsingRxDescription = "#2 Using RxJava"
 const val useCase3Description = "#3 Perform several network requests concurrently"
 const val useCase4Description = "#4 Network request with TimeOut and Retry"
 const val useCase5Description = "#5 Timeout with Retry Network request"
-const val useCase7Description = "#7 Network requests with timeout and retry"
-const val useCase7UsingCallbacksDescription = "#7 Using callbacks"
-const val useCase7UsingRxDescription = "#7 Using RxJava"
-const val useCase8Description = "#8 Room and Coroutines"
-const val useCase9Description = "#9 Debugging Coroutines"
-const val useCase10Description = "#10 Offload expensive calculation to background thread"
+const val useCase5UsingCallbacksDescription = "#5 Using callbacks"
+const val useCase5UsingRxDescription = "#5 Using RxJava"
+const val useCase6Description = "#6 Room and Coroutines"
+const val useCase7Description = "#7 Offload expensive calculation to background thread"
+const val useCase8Description = "#8 Debugging Coroutines"
 const val useCase11Description = "#11 Cooperative Cancellation"
 const val useCase12Description = "#12 Offload expensive calculation to several coroutines"
 const val useCase13Description = "#13 Exception Handling"
@@ -55,7 +56,8 @@ private val coroutinesUseCases =
             UseCase(useCase3Description, PerformConcurrentNetworkRequestsActivity::class.java),
             UseCase(useCase4Description, TimeoutAndRetryActivity::class.java),
             UseCase(useCase5Description, TimeoutWithRetriesActivity::class.java),
-
+            UseCase(useCase6Description, RoomAndCoroutineActivity::class.java),
+            UseCase(useCase7Description, CalculationInBackgroundActivity::class.java),
         )
     )
 

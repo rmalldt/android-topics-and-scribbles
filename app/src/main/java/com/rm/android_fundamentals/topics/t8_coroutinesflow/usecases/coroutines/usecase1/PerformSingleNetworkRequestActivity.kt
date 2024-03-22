@@ -2,6 +2,7 @@ package com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.rm.android_fundamentals.base.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityPerformSingleNetworkRequestBinding
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.base.useCase1Description
@@ -26,6 +27,8 @@ class PerformSingleNetworkRequestActivity : BaseActivity() {
                 render(uiState)
             }
         }
+
+        lifecycleScope
 
         binding.btnPerformNetworkRequest.setOnClickListener {
             viewModel.performSingleNetworkRequest()

@@ -30,7 +30,7 @@ class TimeoutWithRetriesActivity : BaseActivity() {
         }
 
         binding.btnPerformNetworkRequest.setOnClickListener {
-            val timeOut = binding.editTxtTimeOut.text.toString().toLongOrNull()
+            val timeOut = binding.editTxtTimeout.text.toString().toLongOrNull()
             if (timeOut != null) {
                 viewModel.multipleNetworkRequestsWithRetries()
             }

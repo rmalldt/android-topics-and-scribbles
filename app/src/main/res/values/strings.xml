@@ -5,8 +5,6 @@
 
 
     <string name="duration">Operation took %d ms</string>
-
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="duration_calculation">Calculation took %d ms</string>
+    <string name="duration_string_conversion">Converting BigInteger to String took %d ms</string>
 </resources>

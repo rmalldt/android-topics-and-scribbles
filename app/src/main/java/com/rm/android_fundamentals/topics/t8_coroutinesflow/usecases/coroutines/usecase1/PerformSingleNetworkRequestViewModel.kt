@@ -13,7 +13,9 @@ class PerformSingleNetworkRequestViewModel(
 
     fun performSingleNetworkRequest() {
         _uiState.value = UiState.Loading
+
         viewModelScope.launch {
+            Timber.d("First statement in the coroutine")
             try {
                 val recentAndroidVersions = mockApi.getRecentAndroidVersions()
                 _uiState.value = UiState.Success(recentAndroidVersions)

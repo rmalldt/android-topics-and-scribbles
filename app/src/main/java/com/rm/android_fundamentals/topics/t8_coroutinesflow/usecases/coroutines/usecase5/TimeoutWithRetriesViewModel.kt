@@ -22,22 +22,23 @@ class TimeoutWithRetriesViewModel(
 
         viewModelScope.launch {
             try {
+                // Get versions
                 val versions = async {
                     retryWithTimeout(numberOfRetries, timeout) {
-                        Timber.tag("mTest").d("version request start")
                         mockApi.getRecentAndroidVersions()
                     }
-                }.await() // suspends awaiting completion of this value
+                }.await() // suspends
 
+                // Then get features
                 val featuresList = versions
                     .map { version ->
+                        // Run in parallel
                         async {
                             retryWithTimeout(numberOfRetries, timeout) {
-                                Timber.tag("mTest").d("features request start")
                                 mockApi.getAndroidVersionFeatures(version.apiLevel)
                             }
                         }
-                    }.awaitAll()
+                    }.awaitAll() // suspend, await for the completion
                     _uiState.value = UiState.Success(featuresList)
             } catch (e: Exception) {
                 Timber.e(e)
@@ -68,7 +69,7 @@ class TimeoutWithRetriesViewModel(
                 val versionFeatures = listOf(
                     oreoVersionsDeferred,
                     pieVersionsDeferred
-                ).awaitAll()
+                ).awaitAll() // suspend, await for the completion
 
                 _uiState.value = UiState.Success(versionFeatures)
 
@@ -78,7 +79,6 @@ class TimeoutWithRetriesViewModel(
             }
         }
     }
-
 
     private suspend fun <T> retryWithTimeout(
         numberOfRetries: Int,

@@ -71,7 +71,7 @@ class PerformConcurrentNetworkRequestsViewModel(
                         async {
                             mockApi.getAndroidVersionFeatures(version.apiLevel)
                         }
-                    }.awaitAll() // await on all List<Deferred> objects
+                    }.awaitAll() // suspend, await for the completion of all List<Deferred> objects
                 _uiState.value = UiState.Success(features)
             } catch (e: Exception) {
                 Timber.e(e)

@@ -27,7 +27,7 @@ class TimeoutAndRetryActivity : BaseActivity() {
         }
 
         binding.btnTimeout.setOnClickListener {
-            val timeOut = binding.editTxtTimeOut.text.toString().toLongOrNull()
+            val timeOut = binding.editTxtTimeout.text.toString().toLongOrNull()
             if (timeOut != null) {
                 viewModel.performNetworkRequestWithTimeout(timeOut)
             }

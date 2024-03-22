@@ -28,7 +28,7 @@ class StorageTypesActivity : BaseActivity() {
         checkPermissions()
 
         if (isExternalStorageWritable() && isExternalStorageReadable()) {
-            this@StorageTypesActivity.toast("External storage dirs available for read and write")
+            toast("External storage dirs available for read and write")
         }
 
         selectStorageType()
@@ -98,7 +98,7 @@ class StorageTypesActivity : BaseActivity() {
                     binding.txtFileInfo.text = file.absolutePath
                 }
             } else {
-                this@StorageTypesActivity.toast("Please enter both file name and file content")
+                toast("Please enter both file name and file content")
             }
         }
     }
@@ -141,7 +141,7 @@ class StorageTypesActivity : BaseActivity() {
             }
             binding.txtFileInfo.text = result
         } else {
-            this@StorageTypesActivity.toast("Please enter file name")
+            toast("Please enter file name")
         }
     }
 
