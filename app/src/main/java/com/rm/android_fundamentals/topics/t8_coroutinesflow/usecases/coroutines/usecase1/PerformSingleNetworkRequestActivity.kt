@@ -28,8 +28,6 @@ class PerformSingleNetworkRequestActivity : BaseActivity() {
             }
         }
 
-        lifecycleScope
-
         binding.btnPerformNetworkRequest.setOnClickListener {
             viewModel.performSingleNetworkRequest()
         }

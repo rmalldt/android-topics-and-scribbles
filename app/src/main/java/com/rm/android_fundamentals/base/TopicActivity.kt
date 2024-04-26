@@ -3,11 +3,8 @@ package com.rm.android_fundamentals.base
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rm.android_fundamentals.R
 import com.rm.android_fundamentals.databinding.ActivityTopicBinding
 import com.rm.android_fundamentals.utils.initItemDecorator
 
@@ -33,11 +30,11 @@ class TopicActivity : BaseActivity() {
     }
 
     private fun initRecyclerView() {
-        binding.recyclerView.apply {
+        binding.rvMain.apply {
             adapter = SubTopicAdapter(topic, onTopicClickedListener())
             hasFixedSize()
             layoutManager = LinearLayoutManager(this@TopicActivity)
-            addItemDecoration(initItemDecorator(this@TopicActivity))
+            //addItemDecoration(initItemDecorator(this@TopicActivity))
         }
     }
 

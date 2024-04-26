@@ -29,6 +29,7 @@ class TopicAdapter(
                 onTopicClicked(topics[position])
             }
         }
+
     }
 
     class ViewHolder(val binding: RecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root)

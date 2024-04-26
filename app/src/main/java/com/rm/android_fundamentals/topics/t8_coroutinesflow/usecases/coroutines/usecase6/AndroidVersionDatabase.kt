@@ -11,22 +11,20 @@ abstract class AndroidVersionDatabase : RoomDatabase() {
     abstract fun androidVersionDao(): AndroidVersionDao
 
     companion object {
+        @Volatile
         private var INSTANCE: AndroidVersionDatabase? = null
 
         fun getInstance(context: Context): AndroidVersionDatabase {
-            if (INSTANCE == null) {
-                synchronized(AndroidVersionDatabase::class) {
-                    INSTANCE = buildRoomDb(context)
-                }
-            }
-            return INSTANCE!!
-        }
+            return INSTANCE ?: synchronized(AndroidVersionDatabase::class) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AndroidVersionDatabase::class.java,
+                    "androidversions.db"
+                ).build()
 
-        private fun buildRoomDb(context: Context) =
-            Room.databaseBuilder(
-                context.applicationContext,
-                AndroidVersionDatabase::class.java,
-                "androidversions.db"
-            ).build()
+                INSTANCE = instance
+                instance
+            }
+        }
     }
 }

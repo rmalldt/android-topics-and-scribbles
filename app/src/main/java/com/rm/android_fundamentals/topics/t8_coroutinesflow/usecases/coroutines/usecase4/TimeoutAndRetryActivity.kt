@@ -61,7 +61,7 @@ class TimeoutAndRetryActivity : BaseActivity() {
     private fun onSuccess(uiState: UiState.Success) = with(binding) {
         progressBar.setGone()
         enableButtons()
-        val readableVersions = uiState.recentVerssions.map { "API ${it.apiLevel}: ${it.name}" }
+        val readableVersions = uiState.recentVersions.map { "API ${it.apiLevel}: ${it.name}" }
         tvResult.text = fromHtml(
             "<b>Recent Android Versions</b><br>${readableVersions.joinToString(separator = "<br>")}"
         )

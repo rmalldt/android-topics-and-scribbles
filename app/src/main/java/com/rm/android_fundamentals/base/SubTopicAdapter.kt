@@ -32,5 +32,4 @@ class SubTopicAdapter(
     override fun getItemCount() = topic.subTopics.size
 
     class ViewHolder(val binding: RecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root)
-
 }

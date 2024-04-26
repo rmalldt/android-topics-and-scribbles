@@ -20,10 +20,6 @@ class SequentialNetworkRequestsCallbacksViewModel(
         // Callback 1
         getAndroidVersionsCall = mockApi.getRecentAndroidVersions() // Call object
         getAndroidVersionsCall!!.enqueue(object : Callback<List<AndroidVersion>> { // launch network call
-            override fun onFailure(call: Call<List<AndroidVersion>>, t: Throwable) {
-                _uiState.value = UiState.Error("Network Request failed!")
-            }
-
             override fun onResponse(
                 call: Call<List<AndroidVersion>>,
                 response: Response<List<AndroidVersion>>
@@ -34,10 +30,6 @@ class SequentialNetworkRequestsCallbacksViewModel(
                     // Callback 2
                     getVersionFeaturesCall = mockApi.getRecentAndroidVersionFeatures(mostRecentAndroidVersion.apiLevel) // Call object
                     getVersionFeaturesCall!!.enqueue(object : Callback<VersionFeatures> { // launch network call
-                        override fun onFailure(call: Call<VersionFeatures>, t: Throwable) {
-                            _uiState.value = UiState.Error("Network Request failed!")
-                        }
-
                         override fun onResponse(
                             call: Call<VersionFeatures>,
                             response: Response<VersionFeatures>
@@ -49,10 +41,18 @@ class SequentialNetworkRequestsCallbacksViewModel(
                                 _uiState.value = UiState.Error("Network Request failed!")
                             }
                         }
+
+                        override fun onFailure(call: Call<VersionFeatures>, t: Throwable) {
+                            _uiState.value = UiState.Error("Network Request failed!")
+                        }
                     })
                 } else {
                     _uiState.value = UiState.Error("Network Request failed!")
                 }
+            }
+
+            override fun onFailure(call: Call<List<AndroidVersion>>, t: Throwable) {
+                _uiState.value = UiState.Error("Network Request failed!")
             }
         })
     }

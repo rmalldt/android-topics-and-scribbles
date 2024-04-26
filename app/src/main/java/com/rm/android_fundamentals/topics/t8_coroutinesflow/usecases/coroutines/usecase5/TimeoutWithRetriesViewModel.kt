@@ -1,18 +1,21 @@
 package com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase5
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.base.BaseViewModel
+import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.AndroidVersion
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.MockApi
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.withTimeout
+import retrofit2.HttpException
 import timber.log.Timber
 
 class TimeoutWithRetriesViewModel(
-    private val mockApi: MockApi = mockApi()
+    private val mockApi: MockApi = mockApiError()
 ) : BaseViewModel<UiState>() {
 
     fun multipleNetworkRequestsWithRetries() {
@@ -21,28 +24,61 @@ class TimeoutWithRetriesViewModel(
         val timeout = 1000L
 
         viewModelScope.launch {
-            try {
-                // Get versions
-                val versions = async {
-                    retryWithTimeout(numberOfRetries, timeout) {
-                        mockApi.getRecentAndroidVersions()
+            // Get versions
+            var versions: List<AndroidVersion> = listOf()
+            supervisorScope {
+                try {
+                    versions = async {
+                        retryWithTimeout(numberOfRetries, timeout) {
+                            mockApi.getRecentAndroidVersions()
+                        }
+                    }.await() // must catch exception, await is called directly in supervisorScope
+                } catch (e: Exception) {
+                    if (e is CancellationException) {
+                        throw e // rethrow, otherwise Cancellation exception is ignored
                     }
-                }.await() // suspends
+                    if (e is HttpException) {
+                        _uiState.value = UiState.Error("Internal server error: failed to fetch versions!")
+                    } else {
+                        _uiState.value = UiState.Error("Network error: failed to fetch versions!")
+                    }
+                }
+            }
 
-                // Then get features
-                val featuresList = versions
-                    .map { version ->
-                        // Run in parallel
-                        async {
-                            retryWithTimeout(numberOfRetries, timeout) {
-                                mockApi.getAndroidVersionFeatures(version.apiLevel)
+            // Then get features
+            if (versions.isNotEmpty()) {
+                supervisorScope {
+                    val deferred = versions
+                        .map { version ->
+                            // Multiple calls run in parallel
+                            async {
+                                retryWithTimeout(numberOfRetries, timeout) {
+                                    mockApi.getAndroidVersionFeatures(version.apiLevel)
+                                }
                             }
                         }
-                    }.awaitAll() // suspend, await for the completion
-                    _uiState.value = UiState.Success(featuresList)
-            } catch (e: Exception) {
-                Timber.e(e)
-                _uiState.value = UiState.Error("Network Request failed")
+
+                    val featuresList = deferred
+                        .mapNotNull {
+                            try {
+                                it.await()
+                            } catch (e: Exception) {
+                                if (e is CancellationException) {
+                                    throw e // rethrow, otherwise Cancellation exception is ignored
+                                }
+                                Timber.d("Error loading version data")
+                                null// null value for network call that threw exception
+                            }
+                    }
+
+                    if (featuresList.isNotEmpty()) {
+                        // If out of all network calls all or some succeeds, display values
+                        _uiState.value = UiState.Success(featuresList)
+                    } else {
+                        // If all network calls fails, display error message
+                        _uiState.value = UiState.Error("Network error: failed to fetch versions")
+                    }
+                }
             }
         }
     }

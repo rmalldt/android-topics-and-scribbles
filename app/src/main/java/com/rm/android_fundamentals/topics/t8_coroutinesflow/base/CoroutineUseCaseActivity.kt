@@ -30,11 +30,11 @@ class CoroutineUseCaseActivity : BaseActivity() {
     }
 
     private fun initRecyclerView() {
-        binding.recyclerView.apply {
+        binding.rv.apply {
             adapter = UseCaseAdapter(useCaseCategory, onUseCaseClickListener)
             hasFixedSize()
             layoutManager = LinearLayoutManager(this@CoroutineUseCaseActivity)
-            addItemDecoration(initItemDecorator(this@CoroutineUseCaseActivity))
+            //addItemDecoration(initItemDecorator(this@CoroutineUseCaseActivity))
         }
     }
 

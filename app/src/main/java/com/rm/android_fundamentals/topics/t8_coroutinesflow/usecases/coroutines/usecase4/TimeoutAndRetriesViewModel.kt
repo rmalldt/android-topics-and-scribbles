@@ -59,8 +59,8 @@ class TimeoutAndRetriesViewModel(
 
     fun performNetworkRequestWithRetries() {
         _uiState.value = UiState.Loading
-        viewModelScope.launch {
 
+        viewModelScope.launch {
             val numberOfRetries = 2
             try {
                 retry(numberOfRetries) {
@@ -111,7 +111,7 @@ class TimeoutAndRetriesViewModel(
                     // no retries performed as control goes to outer catch block.
                     try {
                         loadVersions()
-                        return@launch
+                        return@repeat
                     } catch (e: Exception) { // if loadVersion throws,
                         Timber.e(e)          // simply log exception
                     }

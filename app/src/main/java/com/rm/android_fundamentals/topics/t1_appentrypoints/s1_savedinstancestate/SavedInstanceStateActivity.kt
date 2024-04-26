@@ -2,6 +2,11 @@ package com.rm.android_fundamentals.topics.t1_appentrypoints.s1_savedinstancesta
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
+import android.widget.TextView
+import androidx.core.widget.addTextChangedListener
 import com.rm.android_fundamentals.base.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivitySavedInstanceBinding
 import com.rm.android_fundamentals.topics.t6_viewlayouts.s1_recyclerview.RecyclerViewExActivity
@@ -45,6 +50,9 @@ class SavedInstanceStateActivity : BaseActivity() {
             val intent = Intent(this, RecyclerViewExActivity::class.java)
             startActivity(intent)
         }
+
+
+        displayEditTextValueOnTyping(binding.txtInputName, binding.txtInfo)
     }
 
     /**
@@ -75,6 +83,19 @@ class SavedInstanceStateActivity : BaseActivity() {
         // Get saved instance states
         val savedInt = savedInstanceState.getInt(NUM_KEY, 10)
         num = savedInt
+    }
+
+
+    private fun displayEditTextValueOnTyping(editText: EditText, textView: TextView) {
+        editText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                textView.text = s.toString()
+            }
+        })
     }
 
     override fun getTitleToolbar() = "SavedInstanceState activity"

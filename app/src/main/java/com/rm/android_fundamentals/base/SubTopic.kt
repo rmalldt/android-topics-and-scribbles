@@ -10,12 +10,15 @@ import com.rm.android_fundamentals.topics.t2_appnavigation.s2_viewpager.HostingA
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s1_lifecycle.withlifecyclecomponent.LifecycleActivity
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s1_lifecycle.withoutlifecyclecomponent.WithoutLifeCycleComponentActivity
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s2_viewmodels.ex1.DiceRollActivity
+import com.rm.android_fundamentals.topics.t3_architecturecomponents.s2_viewmodels.ex2.SavedStateHandleActivity
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s3_livedata.NameActivity
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s4_coroutinescopes.CoroutineScopesActivity
 import com.rm.android_fundamentals.topics.t4_appcomponents.AppComponentsActivity
 import com.rm.android_fundamentals.topics.t5_intents.IntentActivity
 import com.rm.android_fundamentals.topics.t7_storagetypes.StorageTypesActivity
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.CoroutinesActivity
+import com.rm.android_fundamentals.topics.t9_architectures.mvc.MVCActivity
+import com.rm.android_fundamentals.topics.t9_architectures.mvp.MVPActivity
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -55,16 +58,18 @@ val appNavigation = Topic(
 const val architectureComponentsSubTopic1 = "1. Listener without lifecycle-aware component"
 const val architectureComponentsSubTopic2 = "2. Lifecycle-aware component"
 const val architectureComponentsSubTopic3 = "3. ViewModel: DiceRoll"
-const val architectureComponentsSubTopic4 = "4. LiveData"
-const val architectureComponentsSubTopic5 = "5. CoroutineScopes"
+const val architectureComponentsSubTopic4 = "4. ViewModel: Saved state handle"
+const val architectureComponentsSubTopic5 = "5. LiveData"
+const val architectureComponentsSubTopic6 = "5. CoroutineScopes"
 val architectureComponents = Topic(
     "3. Architecture components",
     listOf(
         SubTopic(architectureComponentsSubTopic1, WithoutLifeCycleComponentActivity::class.java),
         SubTopic(architectureComponentsSubTopic2, LifecycleActivity::class.java),
         SubTopic(architectureComponentsSubTopic3, DiceRollActivity::class.java),
-        SubTopic(architectureComponentsSubTopic4, NameActivity::class.java),
-        SubTopic(architectureComponentsSubTopic5, CoroutineScopesActivity::class.java)
+        SubTopic(architectureComponentsSubTopic4, SavedStateHandleActivity::class.java),
+        SubTopic(architectureComponentsSubTopic5, NameActivity::class.java),
+        SubTopic(architectureComponentsSubTopic6, CoroutineScopesActivity::class.java)
     )
 )
 
@@ -107,9 +112,14 @@ val coroutines = Topic(
     )
 )
 
-val compose = Topic(
-    "9. Compose",
-    listOf()
+const val mvcSubTopic1 = "MVC"
+const val mvpSubTopic2 = "MVP"
+val architectures = Topic(
+    "9. Architectures",
+    listOf(
+        SubTopic(mvcSubTopic1, MVCActivity::class.java),
+        SubTopic(mvpSubTopic2, MVPActivity::class.java)
+    )
 )
 
 val topics = listOf(
@@ -121,5 +131,5 @@ val topics = listOf(
     viewLayouts,
     storageTypes,
     coroutines,
-    compose
+    architectures
 )

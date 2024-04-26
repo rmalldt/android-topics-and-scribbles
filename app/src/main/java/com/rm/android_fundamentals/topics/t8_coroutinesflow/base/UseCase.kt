@@ -14,6 +14,8 @@ import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase5.TimeoutWithRetriesViewModel
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase6.RoomAndCoroutineActivity
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase7.CalculationInBackgroundActivity
+import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.flow.usecase1.FlowUseCase1Activity
+import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.flow.usecase2.FlowUseCase2Activity
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -69,10 +71,13 @@ const val flowUseCase4Description = "#4 Exposing Flows in the ViewModel"
 private val flowUseCases =
     UseCaseCategory(
         "Flow Use Cases",
-        listOf()
+        listOf(
+            UseCase(flowUseCase1Description, FlowUseCase1Activity::class.java),
+            UseCase(flowUseCase4Description, FlowUseCase2Activity::class.java)
+        )
     )
 
 val useCaseCategories = listOf(
     coroutinesUseCases,
-    //flowUseCases
+    flowUseCases
 )

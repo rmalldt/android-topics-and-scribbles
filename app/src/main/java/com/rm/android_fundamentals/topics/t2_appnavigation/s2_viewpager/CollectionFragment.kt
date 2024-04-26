@@ -30,7 +30,6 @@ class CollectionFragment : Fragment() {
         setViewPagerTabLayout()
     }
 
-
     private fun setViewPagerTabLayout() {
         collectionFragmentAdapter = CollectionFragmentAdapter(this)
         viewPager = binding.pager

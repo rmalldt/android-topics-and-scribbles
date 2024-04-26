@@ -2,16 +2,13 @@ package com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines
 
 import com.google.gson.Gson
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.createMockApi
-import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.featuresOfAndroid10
-import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.featuresOfOreo
-import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.featuresOfPie
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.mockAndroidVersions
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.mockVersionFeaturesAndroid10
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.mockVersionFeaturesOreo
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.mockVersionFeaturesPie
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.utils.MockNetworkInterceptor
 
-fun mockApi() = createMockApi(
+fun mockApiError() = createMockApi(
     MockNetworkInterceptor()
         // Versions: Timeout on first request
         .mock(
@@ -52,11 +49,11 @@ fun mockApi() = createMockApi(
             100,
             persist = false
         )
-        // Oreo features: Successful on third request within timeout
+        // Oreo features: Server error on third request
         .mock(
             "http://localhost/android-version-features/27",
             { Gson().toJson(mockVersionFeaturesOreo) },
-            200,
+            MockNetworkInterceptor.INTERNAL_SERVER_ERROR,
             100
         )
         // Pie features: Timeout on first request for oreo features

@@ -1,15 +1,12 @@
 package com.rm.android_fundamentals.topics.t3_architecturecomponents.s2_viewmodels.ex1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.rm.android_fundamentals.base.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityDiceRollBinding
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class DiceRollActivity : BaseActivity() {

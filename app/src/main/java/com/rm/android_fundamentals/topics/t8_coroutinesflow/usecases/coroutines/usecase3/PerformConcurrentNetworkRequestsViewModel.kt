@@ -18,8 +18,8 @@ class PerformConcurrentNetworkRequestsViewModel(
     }
 
     fun performConcurrentNetworkRequests() {
-        getVersionsThenFeaturesConcurrent()
-        //getVersionsConcurrent()
+        //getVersionsThenFeaturesConcurrent()
+        getFeaturesConcurrent()
     }
 
     private fun getVersionsThenFeaturesSequential() {
@@ -94,8 +94,8 @@ class PerformConcurrentNetworkRequestsViewModel(
          * in the future, so the exception is on hold.
          * Therefore, try-catch block can be only applied around await() call
          */
-        try {
-            viewModelScope.launch {
+        viewModelScope.launch {
+            try {
                 val oreoFeatures = oreoFeaturesDef.await()             // first suspension point
                 val pieFeatures = pieFeaturesDef.await()               // second
                 val android10Features = android10FeaturesDef.await()   // third
@@ -104,10 +104,10 @@ class PerformConcurrentNetworkRequestsViewModel(
                 //Alternatively
                 //val featuresList = awaitAll(oreoFeaturesDef, pieFeaturesDef, android10FeaturesDef)
                 //_uiState.value = UiState.Success(featuresList)
+            } catch (e: Exception) {
+                Timber.e(e)
+                _uiState.value = UiState.Error("Network Request failed!")
             }
-        } catch (e: Exception) {
-            Timber.e(e)
-            _uiState.value = UiState.Error("Network Request failed!")
         }
     }
 }

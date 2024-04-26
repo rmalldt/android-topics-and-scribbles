@@ -19,7 +19,7 @@ fun mockApi() = createMockApi(
         .mock(
             path = "http://localhost/android-version-features/27",
             body = { Gson().toJson(mockVersionFeaturesOreo) },
-            status = 200,
+            status = 500,
             delayInMs = 500
         )
         .mock(

@@ -110,6 +110,10 @@ class MockNetworkInterceptor : Interceptor {
         )
         mockResponses.add(mockResponse)
     }
+
+    companion object {
+        const val INTERNAL_SERVER_ERROR = 500
+    }
 }
 
 data class MockResponse(

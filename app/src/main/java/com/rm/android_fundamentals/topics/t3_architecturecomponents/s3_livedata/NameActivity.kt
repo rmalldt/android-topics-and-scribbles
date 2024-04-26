@@ -1,13 +1,10 @@
 package com.rm.android_fundamentals.topics.t3_architecturecomponents.s3_livedata
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.coroutineScope
 import com.rm.android_fundamentals.base.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityNameBinding
-import kotlinx.coroutines.launch
 
 class NameActivity : BaseActivity() {
 

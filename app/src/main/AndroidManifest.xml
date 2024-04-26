@@ -39,6 +39,35 @@
         android:theme="@style/Theme.Androidfundamentals"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".topics.t9_architectures.mvp.MVPActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Androidfundamentals" />
+        <activity
+            android:name=".topics.t9_architectures.ArchitecturesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t9_architectures.mvc.MVCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t3_architecturecomponents.s2_viewmodels.ex2.SavedStateHandleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t8_coroutinesflow.usecases.flow.usecase2.FlowUseCase2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".topics.t8_coroutinesflow.usecases.flow.usecase1.FlowUseCase1Activity"
+            android:exported="false" />
+        <activity
             android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase7.CalculationInBackgroundActivity"
             android:exported="false" />
         <activity
@@ -119,15 +148,6 @@
                 <data android:mimeType="text/plain" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
