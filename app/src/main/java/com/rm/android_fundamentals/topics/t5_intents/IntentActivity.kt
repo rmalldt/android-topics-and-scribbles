@@ -14,7 +14,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityIntentBinding
 
 class IntentActivity : BaseActivity() {

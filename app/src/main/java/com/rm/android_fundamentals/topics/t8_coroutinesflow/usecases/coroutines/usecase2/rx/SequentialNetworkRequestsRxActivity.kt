@@ -1,13 +1,10 @@
 package com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase2.rx
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivitySequentialNetworkRequestsBinding
-import com.rm.android_fundamentals.topics.t8_coroutinesflow.base.useCase2UsingCallbacksDescription
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.base.useCase2UsingRxDescription
-import com.rm.android_fundamentals.topics.t8_coroutinesflow.base.useCase3Description
 import com.rm.android_fundamentals.utils.fromHtml
 import com.rm.android_fundamentals.utils.setGone
 import com.rm.android_fundamentals.utils.setVisible

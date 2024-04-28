@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.base
+package com.rm.android_fundamentals.legacy
 
 import android.view.View
 import android.widget.ImageView

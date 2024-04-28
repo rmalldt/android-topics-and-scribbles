@@ -1,31 +1,27 @@
 package com.rm.android_fundamentals
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rm.android_fundamentals.base.Topic
-import com.rm.android_fundamentals.base.TopicActivity
-import com.rm.android_fundamentals.base.TopicAdapter
-import com.rm.android_fundamentals.base.topics
+import com.rm.android_fundamentals.base.ExpandableTopicAdapter
+import com.rm.android_fundamentals.base.model.NavDest
 import com.rm.android_fundamentals.databinding.ActivityMainBinding
-import com.rm.android_fundamentals.topics.t0.MainFragmentDirections
-import timber.log.Timber
+import com.rm.android_fundamentals.utils.dpToPx
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var navController: NavController
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.mainFragment, R.id.drawerMainFragment),
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.drawerMainFragment),
             binding.drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -47,8 +43,8 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
     }
 
-    private fun initRecyclerView() {
-        binding.rvMain.apply {
+   /* private fun initRecyclerView() {
+        binding.rvTopics.apply {
             adapter = TopicAdapter(topics) { topic ->
                 val bundle = Bundle()
                 bundle.putParcelable ("topic", topic)
@@ -58,7 +54,19 @@ class MainActivity : AppCompatActivity() {
 
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
+    }*/
+
+    private fun initRecyclerView() {
+        binding.rvTopics.apply {
+            adapter = ExpandableTopicAdapter(NavDest.drawerTopicList, {
+                navController.navigate(it.targetFragmentId)
+                binding.drawerLayout.closeDrawer(GravityCompat.START)
+            })
+
+            layoutManager = LinearLayoutManager(this@MainActivity)
+        }
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(binding.drawerLayout) || super.onSupportNavigateUp()

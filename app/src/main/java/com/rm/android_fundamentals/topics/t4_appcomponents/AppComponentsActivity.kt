@@ -1,11 +1,8 @@
 package com.rm.android_fundamentals.topics.t4_appcomponents
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityAppComponentsBinding
-import com.rm.android_fundamentals.databinding.ActivityArchitectureComponentsBinding
 
 class AppComponentsActivity : BaseActivity() {
 

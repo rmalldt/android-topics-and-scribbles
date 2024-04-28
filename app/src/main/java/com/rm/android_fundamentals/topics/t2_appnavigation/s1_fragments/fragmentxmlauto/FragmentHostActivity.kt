@@ -2,7 +2,7 @@ package com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmen
 
 import android.os.Bundle
 import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityFragmentHostBinding
 
 class FragmentHostActivity : BaseActivity() {

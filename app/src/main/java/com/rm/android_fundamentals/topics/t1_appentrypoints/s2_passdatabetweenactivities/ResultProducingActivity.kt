@@ -3,7 +3,7 @@ package com.rm.android_fundamentals.topics.t1_appentrypoints.s2_passdatabetweena
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityResultProducingBinding
 import com.rm.android_fundamentals.utils.toast
 

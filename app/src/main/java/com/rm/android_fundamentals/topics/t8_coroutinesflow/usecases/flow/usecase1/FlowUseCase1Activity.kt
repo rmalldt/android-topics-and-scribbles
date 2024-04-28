@@ -3,10 +3,9 @@ package com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.flow.useca
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityFlowUseCase1Binding
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.base.flowUseCase1Description
-import com.rm.android_fundamentals.utils.initItemDecorator
 import com.rm.android_fundamentals.utils.setGone
 import com.rm.android_fundamentals.utils.setVisible
 import com.rm.android_fundamentals.utils.toast

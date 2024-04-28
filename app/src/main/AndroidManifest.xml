@@ -98,9 +98,6 @@
             android:name=".topics.t8_coroutinesflow.base.CoroutineUseCaseActivity"
             android:exported="false" />
         <activity
-            android:name=".base.TopicActivity"
-            android:exported="false" />
-        <activity
             android:name=".topics.t3_architecturecomponents.s4_coroutinescopes.CoroutineScopesActivity"
             android:exported="false" />
         <activity

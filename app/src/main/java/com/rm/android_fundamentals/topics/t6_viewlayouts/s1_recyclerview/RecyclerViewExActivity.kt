@@ -5,7 +5,7 @@ import android.app.ActionBar.LayoutParams
 import android.os.Bundle
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintSet
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityRecyclerViewBinding
 
 class RecyclerViewExActivity : BaseActivity() {

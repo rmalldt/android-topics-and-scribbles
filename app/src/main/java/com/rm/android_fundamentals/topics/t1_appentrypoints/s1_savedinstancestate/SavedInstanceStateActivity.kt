@@ -6,8 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.TextView
-import androidx.core.widget.addTextChangedListener
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivitySavedInstanceBinding
 import com.rm.android_fundamentals.topics.t6_viewlayouts.s1_recyclerview.RecyclerViewExActivity
 

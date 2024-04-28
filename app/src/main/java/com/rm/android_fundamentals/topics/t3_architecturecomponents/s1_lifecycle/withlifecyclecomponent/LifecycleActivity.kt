@@ -1,12 +1,9 @@
 package com.rm.android_fundamentals.topics.t3_architecturecomponents.s1_lifecycle.withlifecyclecomponent
 
 import android.os.Bundle
-import androidx.lifecycle.coroutineScope
-import androidx.lifecycle.lifecycleScope
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityLifecycleBinding
 import com.rm.android_fundamentals.utils.toast
-import kotlinx.coroutines.launch
 
 class LifecycleActivity : BaseActivity() {
 

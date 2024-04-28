@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.base
+package com.rm.android_fundamentals.legacy
 
 import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
@@ -28,14 +28,14 @@ data class SubTopic(
 ) : Parcelable
 
 @Parcelize
-data class Topic(
+data class Chapter(
     val description: String,
     val subTopics: List<SubTopic>
 ) : Parcelable
 
 const val appEntryPointsSubtopic1 = "1. Saved instance state"
 const val appEntryPointsSubtopic2 = "2. Register activity for result"
-val appEntryPoints = Topic(
+val appEntryPoints = Chapter(
     "1. App entry points",
     listOf(
         SubTopic(appEntryPointsSubtopic1, SavedInstanceStateActivity::class.java),
@@ -46,7 +46,7 @@ val appEntryPoints = Topic(
 const val appNavigationSubTopic1 = "1. Fragments programmatically"
 const val appNavigationSubTopic2 = "2. Fragment XML automatic"
 const val appNavigationSubTopic3 = "3. ViewPager"
-val appNavigation = Topic(
+val appNavigation = Chapter(
     "2. App navigation",
     listOf(
         SubTopic(appNavigationSubTopic1, FragmentHostManualActivity::class.java),
@@ -61,7 +61,7 @@ const val architectureComponentsSubTopic3 = "3. ViewModel: DiceRoll"
 const val architectureComponentsSubTopic4 = "4. ViewModel: Saved state handle"
 const val architectureComponentsSubTopic5 = "5. LiveData"
 const val architectureComponentsSubTopic6 = "5. CoroutineScopes"
-val architectureComponents = Topic(
+val architectureComponents = Chapter(
     "3. Architecture components",
     listOf(
         SubTopic(architectureComponentsSubTopic1, WithoutLifeCycleComponentActivity::class.java),
@@ -74,7 +74,7 @@ val architectureComponents = Topic(
 )
 
 const val appComponentSubTopic1 = "1. App component"
-val appComponents = Topic(
+val appComponents = Chapter(
     "4. App components",
     listOf(
         SubTopic(appComponentSubTopic1, AppComponentsActivity::class.java )
@@ -82,7 +82,7 @@ val appComponents = Topic(
 )
 
 const val intentSubTopic1 = "1. Intent"
-val intents = Topic(
+val intents = Chapter(
     "5. Intents",
     listOf(
         SubTopic(intentSubTopic1, IntentActivity::class.java )
@@ -90,13 +90,13 @@ val intents = Topic(
 )
 
 const val viewLayoutSubTopic1 = "1. View layout"
-val viewLayouts = Topic(
+val viewLayouts = Chapter(
     "6. View layouts",
     listOf()
 )
 
 const val storageTypesSubTopic1 = "1. Storage types"
-val storageTypes = Topic(
+val storageTypes = Chapter(
     "7. Storage types",
     listOf(
         SubTopic(storageTypesSubTopic1, StorageTypesActivity::class.java )
@@ -105,7 +105,7 @@ val storageTypes = Topic(
 
 const val coroutinesSubTopic1 = "Coroutines"
 const val coroutinesSubTopic2 = "Flow"
-val coroutines = Topic(
+val coroutines = Chapter(
     "8. Coroutines",
     listOf(
         SubTopic(coroutinesSubTopic1, CoroutinesActivity::class.java)
@@ -114,7 +114,7 @@ val coroutines = Topic(
 
 const val mvcSubTopic1 = "MVC"
 const val mvpSubTopic2 = "MVP"
-val architectures = Topic(
+val architectures = Chapter(
     "9. Architectures",
     listOf(
         SubTopic(mvcSubTopic1, MVCActivity::class.java),

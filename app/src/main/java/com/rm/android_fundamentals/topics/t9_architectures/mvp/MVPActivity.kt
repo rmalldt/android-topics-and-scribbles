@@ -1,8 +1,8 @@
 package com.rm.android_fundamentals.topics.t9_architectures.mvp
 
 import android.os.Bundle
-import com.rm.android_fundamentals.base.BaseActivity
-import com.rm.android_fundamentals.base.mvpSubTopic2
+import com.rm.android_fundamentals.legacy.BaseActivity
+import com.rm.android_fundamentals.legacy.mvpSubTopic2
 import com.rm.android_fundamentals.databinding.ActivityMvpactivityBinding
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.mock.AndroidVersion
 import com.rm.android_fundamentals.topics.t9_architectures.common.VersionUiState

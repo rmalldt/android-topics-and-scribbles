@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityFragmentHostManualBinding
 
 class FragmentHostManualActivity : BaseActivity() {

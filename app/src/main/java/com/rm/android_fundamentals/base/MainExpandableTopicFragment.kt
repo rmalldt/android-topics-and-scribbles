@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t0
+package com.rm.android_fundamentals.base
 
 import android.content.Intent
 import android.os.Build
@@ -8,9 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rm.android_fundamentals.base.SubTopicAdapter
-import com.rm.android_fundamentals.base.Topic
 import com.rm.android_fundamentals.databinding.FragmentMainExpandableTopicBinding
+import com.rm.android_fundamentals.legacy.Chapter
+import com.rm.android_fundamentals.legacy.SubTopicAdapter
 import com.rm.android_fundamentals.utils.setGone
 import com.rm.android_fundamentals.utils.setVisible
 import timber.log.Timber
@@ -54,7 +54,7 @@ class MainExpandableTopicFragment : Fragment() {
         }
     }
 
-    private fun initRecyclerView(topic: Topic) {
+    private fun initRecyclerView(topic: Chapter) {
         binding.rvTopicFragment.apply {
             adapter = SubTopicAdapter(topic) { subTopic ->
                 val intent = Intent(requireActivity(), subTopic.targetActivity)
@@ -65,9 +65,9 @@ class MainExpandableTopicFragment : Fragment() {
     }
 
 
-    private fun getTopic(): Topic? =
+    private fun getTopic(): Chapter? =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            arguments?.getParcelable("topic", Topic::class.java)
+            arguments?.getParcelable("topic", Chapter::class.java)
         } else {
             arguments?.getParcelable("topic")
         }

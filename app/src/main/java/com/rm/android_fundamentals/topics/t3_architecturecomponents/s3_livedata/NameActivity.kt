@@ -3,7 +3,7 @@ package com.rm.android_fundamentals.topics.t3_architecturecomponents.s3_livedata
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityNameBinding
 
 class NameActivity : BaseActivity() {

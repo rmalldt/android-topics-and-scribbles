@@ -1,14 +1,14 @@
-package com.rm.android_fundamentals.base
+package com.rm.android_fundamentals.legacy
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rm.android_fundamentals.databinding.RecyclerviewItemBinding
 
-class SubTopicAdapter(
-    private val topic: Topic,
-    private val onItemClicked: (SubTopic) -> Unit
-) : RecyclerView.Adapter<SubTopicAdapter.ViewHolder>() {
+class TopicAdapter(
+    private val topics: List<Chapter>,
+    private val onTopicClicked: (Chapter) -> Unit
+) : RecyclerView.Adapter<TopicAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = RecyclerviewItemBinding.inflate(
@@ -19,17 +19,18 @@ class SubTopicAdapter(
         return ViewHolder(binding)
     }
 
+    override fun getItemCount() = topics.size
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.textRvItem.apply {
-            text = topic.subTopics[position].description
+            text = topics[position].description
 
             setOnClickListener {
-                onItemClicked(topic.subTopics[position])
+                onTopicClicked(topics[position])
             }
         }
-    }
 
-    override fun getItemCount() = topic.subTopics.size
+    }
 
     class ViewHolder(val binding: RecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root)
 }

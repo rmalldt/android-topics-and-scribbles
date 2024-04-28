@@ -14,7 +14,7 @@ import android.provider.MediaStore
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityCommonIntentsBinding
 import com.rm.android_fundamentals.utils.hasPermission
 import com.rm.android_fundamentals.utils.toast

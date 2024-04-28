@@ -5,7 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.content.res.AppCompatResources
 import com.rm.android_fundamentals.AndroidFundamentalsApp
 import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityRoomAndCoroutineBinding
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.base.useCase6Description
 import com.rm.android_fundamentals.utils.fromHtml

@@ -1,7 +1,7 @@
 package com.rm.android_fundamentals.topics.t2_appnavigation.s2_viewpager
 
 import android.os.Bundle
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityHostingBinding
 
 class HostingActivity : BaseActivity() {

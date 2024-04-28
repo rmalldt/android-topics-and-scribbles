@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".topics.t0.MainExpandableTopicFragment">
+    tools:context=".base.MainExpandableTopicFragment">
 
     <TextView
         android:id="@+id/txtMainTitle"
@@ -28,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="@+id/txtMainTitle"
         app:layout_constraintStart_toStartOf="@+id/txtMainTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtMainTitle" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTopicFragment"

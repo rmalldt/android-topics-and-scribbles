@@ -6,7 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract
 import android.provider.CalendarContract.Events
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityRedirectionIntentsBinding
 import com.rm.android_fundamentals.utils.toast
 import java.util.Calendar

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.text.method.ScrollingMovementMethod
 import androidx.core.app.ActivityCompat
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityStorageTypesBinding
 import com.rm.android_fundamentals.utils.hasPermission
 import com.rm.android_fundamentals.utils.toast

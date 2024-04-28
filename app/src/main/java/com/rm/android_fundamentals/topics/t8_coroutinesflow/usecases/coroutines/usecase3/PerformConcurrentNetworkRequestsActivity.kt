@@ -3,7 +3,7 @@ package com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityPerformConcurrentNetworkRequestsBinding
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.base.useCase3Description
 import com.rm.android_fundamentals.utils.EMPTY_STRING

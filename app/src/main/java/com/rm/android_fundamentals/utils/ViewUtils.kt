@@ -93,6 +93,12 @@ fun ImageView.loadImage(
         .into(this)
 }
 
+fun dpToPx(dp: Int, context: Context): Int {
+    val scale = context.resources.displayMetrics.density
+    return (dp * scale.toInt() + 10)
+}
+
+
 /**
  * From kotlinextensions.com
  * Try to hide the keyboard and returns whether it worked

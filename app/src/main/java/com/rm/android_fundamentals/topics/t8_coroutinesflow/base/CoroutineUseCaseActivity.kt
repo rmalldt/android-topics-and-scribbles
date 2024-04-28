@@ -5,9 +5,8 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rm.android_fundamentals.base.BaseActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityCoroutineUseCaseBinding
-import com.rm.android_fundamentals.utils.initItemDecorator
 
 class CoroutineUseCaseActivity : BaseActivity() {
 
