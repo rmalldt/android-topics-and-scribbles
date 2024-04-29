@@ -9,9 +9,9 @@
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:orientation="vertical"
+        android:layout_height="400dp"
         android:background="@color/lightGray"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,209 +19,220 @@
         <TextView
             android:id="@+id/tv1Linear"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:padding="8dp"
+            android:layout_height="@dimen/dimen0dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginTop="@dimen/dimen4dp"
+            android:padding="@dimen/dimen4dp"
             android:layout_weight="1"
-            android:text="LinearLayout, orientation: vertical"
-            android:textStyle="bold"/>
+            android:gravity="center_vertical"
+            android:text="@string/linearlayout_title"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv2Linear"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:padding="8dp"
-            android:gravity="start|center_vertical"
-            android:layout_weight="2"
-            android:background="@color/lightBlue"
-            android:text="gravity: start|center_vertical, layout_weight: 2"
-            android:textSize="14sp" />
+            android:layout_height="@dimen/dimen0dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginBottom="@dimen/dimen4dp"
+            android:padding="@dimen/dimen4dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/linear_layout_description" />
 
         <TextView
             android:id="@+id/tv3Linear"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:background="@color/lightGreen"
-            android:text="gravity: center, layout_weight: 1"
-            android:textSize="14sp"/>
+            android:layout_height="@dimen/dimen0dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen4dp"
+            android:padding="@dimen/dimen4dp"
+            android:layout_weight="2"
+            android:background="@color/lightBlue"
+            android:gravity="start|center_vertical"
+            android:text="gravity: start|center_vertical, layout_weight: 2"
+            android:textSize="@dimen/txtSmall" />
 
         <TextView
             android:id="@+id/tv4Linear"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:padding="8dp"
-            android:gravity="end|center_vertical"
+            android:layout_height="@dimen/dimen0dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen4dp"
+            android:padding="@dimen/dimen4dp"
+            android:layout_weight="1"
+            android:background="@color/lightGreen"
+            android:gravity="center"
+            android:text="gravity: center, layout_weight: 1"
+            android:textSize="@dimen/txtSmall" />
+
+        <TextView
+            android:id="@+id/tv5Linear"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen0dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen4dp"
+            android:padding="@dimen/dimen4dp"
             android:layout_weight="1"
             android:background="@color/lightYellow"
+            android:gravity="end|center_vertical"
             android:text="gravity: end|center_vertical, layout_weight: 1"
-            android:textSize="14sp"/>
+            android:textSize="@dimen/txtSmall" />
 
         <Button
             android:id="@+id/btnLinear"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:padding="8dp"
-            android:layout_weight="2"
-            android:text="layout_weight:2" />
+            android:layout_height="@dimen/dimen0dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen4dp"
+            android:padding="@dimen/dimen4dp"
+            android:layout_weight="1.5"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="layout_weight:1.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/gray"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+
+        <TextView
+            android:id="@+id/tv6Linear"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen2dp"
+            android:padding="@dimen/dimen4dp"
+            android:layout_gravity="start"
+            android:gravity="start|center_vertical"
+            android:text="Difference between 'gravity' and 'layout_gravity'"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv7Linear"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen2dp"
+            android:padding="@dimen/dimen4dp"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            android:gravity="start|center_vertical"
+            android:text="layout_gravity: start,\ngravity: start|center_vertical"
+            android:textSize="@dimen/txtSmall" />
+
+        <TextView
+            android:id="@+id/tv8Linear"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen2dp"
+            android:padding="@dimen/dimen4dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:gravity="start|center_vertical"
+            android:text="layout_gravity: center,\ngravity: start|center_vertical"
+            android:textSize="@dimen/txtSmall" />
+
+        <TextView
+            android:id="@+id/tv9Linear"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen2dp"
+            android:padding="@dimen/dimen4dp"
+            android:layout_gravity="end"
+            android:background="@color/white"
+            android:gravity="start|center_vertical"
+            android:text="layout_gravity: end,\ngravity: start|center_vertical"
+            android:textSize="@dimen/txtSmall" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv5Linear"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:background="@color/gray"
-        android:paddingHorizontal="16dp"
+        android:id="@+id/tv10Linear"
+        android:layout_width="@dimen/dimen0dp"
+        android:layout_height="@dimen/dimen50dp"
+        android:paddingHorizontal="@dimen/dimen16dp"
+        android:background="@color/darkerGray"
         android:gravity="center_vertical"
         android:text="LinearLayout, orientation: horizontal"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:background="@color/gray"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv5Linear">
-
-        <TextView
-            android:id="@+id/tv6Linear"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:layout_weight="1"
-            android:background="@color/lightYellow"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="One"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/tv7Linear"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:layout_weight="1"
-            android:background="@color/lightYellow"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Two"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/tv8Linear"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:layout_weight="1"
-            android:background="@color/lightYellow"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Three"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/tv9Linear"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:layout_weight="1"
-            android:background="@color/lightYellow"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Four"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
+        android:id="@+id/linearLayout3"
+        android:layout_width="@dimen/dimen0dp"
+        android:layout_height="@dimen/dimen0dp"
         android:background="@color/darkerGray"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-        <TextView
-            android:id="@+id/tv10Linear"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:padding="8dp"
-            android:layout_weight="0.6"
-            android:layout_gravity="start"
-            android:gravity="start|center_vertical"
-            android:text="Difference between 'gravity' and 'layout_gravity'"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="14sp" />
+        app:layout_constraintTop_toBottomOf="@+id/tv10Linear">
 
         <TextView
             android:id="@+id/tv11Linear"
-            android:layout_width="250dp"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:padding="8dp"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="@dimen/dimen50dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen4dp"
+            android:padding="@dimen/dimen8dp"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:layout_gravity="start"
-            android:gravity="start|center_vertical"
-            android:text="layout_gravity: start,\ngravity: start|center_vertical"
-            android:textSize="14sp" />
+            android:background="@color/lightYellow"
+            android:gravity="center"
+            android:text="One"
+            android:textSize="@dimen/txtSmall" />
 
         <TextView
             android:id="@+id/tv12Linear"
-            android:layout_width="250dp"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:padding="8dp"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="@dimen/dimen50dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen4dp"
+            android:padding="@dimen/dimen8dp"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:layout_gravity="center"
-            android:gravity="start|center_vertical"
-            android:text="layout_gravity: center,\ngravity: start|center_vertical"
-            android:textSize="14sp" />
+            android:background="@color/lightYellow"
+            android:gravity="center"
+            android:text="Two"
+            android:textSize="@dimen/txtSmall" />
 
         <TextView
             android:id="@+id/tv13Linear"
-            android:layout_width="250dp"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="4dp"
-            android:padding="8dp"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="@dimen/dimen50dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen4dp"
+            android:padding="@dimen/dimen8dp"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:layout_gravity="end"
-            android:gravity="start|center_vertical"
-            android:text="layout_gravity: end,\ngravity: start|center_vertical"
-            android:textSize="14sp" />
+            android:background="@color/lightYellow"
+            android:gravity="center"
+            android:text="Three"
+            android:textSize="@dimen/txtSmall" />
+
+        <TextView
+            android:id="@+id/tv14Linear"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="@dimen/dimen50dp"
+            android:layout_marginHorizontal="@dimen/dimen8dp"
+            android:layout_marginVertical="@dimen/dimen4dp"
+            android:padding="@dimen/dimen8dp"
+            android:layout_weight="1"
+            android:background="@color/lightYellow"
+            android:gravity="center"
+            android:text="Four"
+            android:textSize="@dimen/txtSmall" />
 
     </LinearLayout>
 

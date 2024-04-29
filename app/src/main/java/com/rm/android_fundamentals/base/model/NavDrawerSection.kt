@@ -4,5 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 data class NavDrawerSection(
     val title: String,
-    val targetFragmentId: Int
+    val targetFragmentId: Int = 0,
+    val targetActivity: Class<out AppCompatActivity>? = null
 ) : INavDrawerItem

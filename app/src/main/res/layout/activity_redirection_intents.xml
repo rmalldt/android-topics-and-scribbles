@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".topics.t5_intents.RedirectionIntentsActivity">
 
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/toolbar"/>
+
     <Button
         android:id="@+id/btnMap"
         android:layout_width="wrap_content"

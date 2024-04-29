@@ -1,14 +1,13 @@
 package com.rm.android_fundamentals.topics.t1_appentrypoints.s1_savedinstancestate
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.TextView
-import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivitySavedInstanceBinding
-import com.rm.android_fundamentals.topics.t6_viewlayouts.s1_recyclerview.RecyclerViewExActivity
+import com.rm.android_fundamentals.legacy.BaseActivity
+import com.rm.android_fundamentals.utils.EMPTY_STRING
 
 class SavedInstanceStateActivity : BaseActivity() {
 
@@ -20,38 +19,26 @@ class SavedInstanceStateActivity : BaseActivity() {
         binding = ActivitySavedInstanceBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Recover the instance state
-        if (savedInstanceState != null) {
-            val savedName = savedInstanceState.getString(NAME_KEY, "")
-            val savedSubject = savedInstanceState.getString(SUBJECT_KEY, "")
-            binding.numberTV.text = num.toString()
-            val res = "$savedName, $savedSubject"
-            binding.txtInfo.text = res
-        }
-
         // Add lifecycle observer
         lifecycle.addObserver(SavedInstanceStateActivityObserver(this))
 
-        // Click listeners
-        binding.apply {
-            btnCounter.setOnClickListener {
-                ++num
-                numberTV.text = num.toString()
-            }
-
-            btnSubmit.setOnClickListener {
-                val res = "${txtInputName.text}, ${txtInputSubject.text}"
-                txtInfo.text = res
-            }
+        // Recover saved instance state
+        if (savedInstanceState != null) {
+            val savedInt = savedInstanceState.getInt(NUM_KEY, 10)
+            num = savedInt
+            binding.tvNum.text = num.toString()
         }
 
-        binding.btnNext.setOnClickListener {
-            val intent = Intent(this, RecyclerViewExActivity::class.java)
-            startActivity(intent)
+        binding.btnCounter.setOnClickListener {
+            ++num
+            binding.tvNum.text = num.toString()
         }
 
+       binding.btnSubmit.setOnClickListener {
+           binding.txtInfo.text = binding.txtTypeSomething.text
+       }
 
-        displayEditTextValueOnTyping(binding.txtInputName, binding.txtInfo)
+        displayEditTextValueOnTyping(binding.txtTypeSomething, binding.txtInfo)
     }
 
     /**
@@ -59,11 +46,9 @@ class SavedInstanceStateActivity : BaseActivity() {
      * are saved.
      */
     override fun onSaveInstanceState(outState: Bundle) {
-        val savedInt = num
         outState.apply {
-            putInt(NUM_KEY, savedInt)
-            putString(NAME_KEY, binding.txtInputName.text.toString())
-            putString(SUBJECT_KEY, binding.txtInputSubject.text.toString())
+            putInt(NUM_KEY, num)
+            putString(TEXT_KEY, binding.txtTypeSomething.text.toString())
         }
         super.onSaveInstanceState(outState)
     }
@@ -79,11 +64,9 @@ class SavedInstanceStateActivity : BaseActivity() {
      */
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        // Get saved instance states
-        val savedInt = savedInstanceState.getInt(NUM_KEY, 10)
-        num = savedInt
+        val savedText = savedInstanceState.getString(TEXT_KEY, EMPTY_STRING)
+        binding.txtInfo.text = savedText
     }
-
 
     private fun displayEditTextValueOnTyping(editText: EditText, textView: TextView) {
         editText.addTextChangedListener(object : TextWatcher {
@@ -100,8 +83,7 @@ class SavedInstanceStateActivity : BaseActivity() {
     override fun getTitleToolbar() = "SavedInstanceState activity"
 
     companion object {
-        const val NUM_KEY = "savedInt"
-        const val NAME_KEY = "savedName"
-        const val SUBJECT_KEY = "savedSubject"
+        const val NUM_KEY = "numKey"
+        const val TEXT_KEY = "textKey"
     }
 }

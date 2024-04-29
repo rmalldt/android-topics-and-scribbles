@@ -1,5 +1,6 @@
 package com.rm.android_fundamentals
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -41,30 +42,22 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
     }
 
-   /* private fun initRecyclerView() {
-        binding.rvTopics.apply {
-            adapter = TopicAdapter(topics) { topic ->
-                val bundle = Bundle()
-                bundle.putParcelable ("topic", topic)
-                binding.drawerLayout.closeDrawer(GravityCompat.START)
-                navController.navigate(R.id.drawerMainFragment, bundle)
-            }
-
-            layoutManager = LinearLayoutManager(this@MainActivity)
-        }
-    }*/
-
     private fun initRecyclerView() {
         binding.rvTopics.apply {
             adapter = ExpandableTopicAdapter(NavDest.drawerTopicList, {
-                navController.navigate(it.targetFragmentId)
+
+                // TODO: Replace all Topic activities with fragments
+                if (it.targetFragmentId == 0) {
+                    startActivity(Intent(this@MainActivity, it.targetActivity))
+                } else {
+                    navController.navigate(it.targetFragmentId)
+                }
                 binding.drawerLayout.closeDrawer(GravityCompat.START)
             })
 
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(binding.drawerLayout) || super.onSupportNavigateUp()

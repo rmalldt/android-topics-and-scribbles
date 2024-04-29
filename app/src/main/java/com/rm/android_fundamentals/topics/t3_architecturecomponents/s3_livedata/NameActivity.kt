@@ -30,7 +30,7 @@ class NameActivity : BaseActivity() {
     private fun observeData() {
         // Create the observer which update the UI
         val nameObserver = Observer<String> { newName ->
-            binding.txtName.text = newName
+            binding.tvName.text = newName
         }
 
         // Observe the LiveData passing in this activity as the LifecycleOwner and the Observer

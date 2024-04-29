@@ -50,16 +50,17 @@ sealed class NavDest(
 
     data object Layouts : NavDest(NavDrawerSection(S_LAYOUTS, R.id.layoutsFragment))
     data object UIComponents : NavDest(
-        NavDrawerTopic(
-            T_UI_COMPONENTS,
+        NavDrawerTopic(T_UI_COMPONENTS,
             listOf(
                 Layouts
             )
         )
     )
 
-    /*data object SavedStateInstance : NavDest(NavDrawerSection(S_SAVED_INSTANCE_STATE, SavedInstanceStateActivity::class.java))
-    data object RegisterActivityForResult : NavDest(NavDrawerSection(S_REGISTER_ACTIVITY_FOR_RESULT, ResultActivity::class.java))
+    data object SavedStateInstance :
+        NavDest(NavDrawerSection(S_SAVED_INSTANCE_STATE, targetActivity = SavedInstanceStateActivity::class.java))
+    data object RegisterActivityForResult :
+        NavDest(NavDrawerSection(S_REGISTER_ACTIVITY_FOR_RESULT, targetActivity = ResultActivity::class.java))
     data object AppEntryPoints : NavDest(
         NavDrawerTopic(
             T_APP_ENTRY_POINTS,
@@ -68,11 +69,14 @@ sealed class NavDest(
                 RegisterActivityForResult
             )
         )
-    )*/
+    )
 
-    /*data object FragmentsProgrammatically : NavDest(NavDrawerSection(S_FRAGMENTS_PROGRAMMATICALLY, FragmentHostManualActivity::class.java))
-    data object FragmentXml : NavDest(NavDrawerSection(S_FRAGMENT_XML, FragmentHostActivity::class.java))
-    data object ViewPager : NavDest(NavDrawerSection(S_VIEWPAGER, HostingActivity::class.java))
+    data object FragmentsProgrammatically :
+        NavDest(NavDrawerSection(S_FRAGMENTS_PROGRAMMATICALLY, targetActivity = FragmentHostManualActivity::class.java))
+    data object FragmentXml :
+        NavDest(NavDrawerSection(S_FRAGMENT_XML, targetActivity = FragmentHostActivity::class.java))
+    data object ViewPager :
+        NavDest(NavDrawerSection(S_VIEWPAGER, targetActivity = HostingActivity::class.java))
     data object AppNavigation : NavDest(
         NavDrawerTopic(
             T_APP_NAVIGATION,
@@ -82,15 +86,20 @@ sealed class NavDest(
                 ViewPager
             )
         )
-    )*/
+    )
 
-    /*data object ListenerWithoutLifecycleAwareComponent :
-        NavDest(NavDrawerSection(S_LISTENER_WITHOUT_LIFECYCLE_AWARE_COMPONENT, WithoutLifeCycleComponentActivity::class.java))
-    data object LifecycleAwareComponent : NavDest(NavDrawerSection(S_LIFECYCLE_COMPONENT, LifecycleActivity::class.java))
-    data object ViewModelExample : NavDest(NavDrawerSection(S_VIEWMODEL_EXAMPLE, DiceRollActivity::class.java))
-    data object SavedStateHandle : NavDest(NavDrawerSection(S_SAVED_STATE_HANDLE, SavedStateHandleActivity::class.java))
-    data object LiveDataExample : NavDest(NavDrawerSection(S_LIVEDATA, NameActivity::class.java))
-    data object CoroutineScopes : NavDest(NavDrawerSection(S_COROUTINE_SCOPE, CoroutineScopesActivity::class.java))
+    data object ListenerWithoutLifecycleAwareComponent :
+        NavDest(NavDrawerSection(S_LISTENER_WITHOUT_LIFECYCLE_AWARE_COMPONENT, targetActivity =  WithoutLifeCycleComponentActivity::class.java))
+    data object LifecycleAwareComponent :
+        NavDest(NavDrawerSection(S_LIFECYCLE_COMPONENT, targetActivity = LifecycleActivity::class.java))
+    data object ViewModelExample :
+        NavDest(NavDrawerSection(S_VIEWMODEL_EXAMPLE, targetActivity = DiceRollActivity::class.java))
+    data object SavedStateHandle :
+        NavDest(NavDrawerSection(S_SAVED_STATE_HANDLE, targetActivity = SavedStateHandleActivity::class.java))
+    data object LiveDataExample :
+        NavDest(NavDrawerSection(S_LIVEDATA, targetActivity = NameActivity::class.java))
+    data object CoroutineScopes :
+        NavDest(NavDrawerSection(S_COROUTINE_SCOPE, targetActivity = CoroutineScopesActivity::class.java))
     data object ArchitectureComponents : NavDest(
         NavDrawerTopic(
             T_ARCHITECTURE_COMPONENTS,
@@ -103,9 +112,9 @@ sealed class NavDest(
                 CoroutineScopes
             )
         )
-    )*/
+    )
 
-    /*data object IntentTypes : NavDest(NavDrawerSection(S_INTENT_TYPES, IntentActivity::class.java))
+    data object IntentTypes : NavDest(NavDrawerSection(S_INTENT_TYPES, targetActivity = IntentActivity::class.java))
     data object IntentExample : NavDest(
         NavDrawerTopic(
             T_INTENTS,
@@ -113,9 +122,9 @@ sealed class NavDest(
                 IntentTypes
             )
         )
-    )*/
+    )
 
-    /*data object StorageTypes : NavDest(NavDrawerSection(S_STORAGE_TYPES, StorageTypesActivity::class.java))
+    data object StorageTypes : NavDest(NavDrawerSection(S_STORAGE_TYPES, targetActivity = StorageTypesActivity::class.java))
     data object Storages : NavDest(
         NavDrawerTopic(
             T_STORAGE,
@@ -123,9 +132,9 @@ sealed class NavDest(
                 StorageTypes
             )
         )
-    )*/
+    )
 
-    /*data object CoroutinesAndFlow : NavDest(NavDrawerSection(S_COROUTINES, CoroutinesActivity::class.java))
+    data object CoroutinesAndFlow : NavDest(NavDrawerSection(S_COROUTINES, targetActivity = CoroutinesActivity::class.java))
     data object CoroutinesExample : NavDest(
         NavDrawerTopic(
             T_COROUTINES,
@@ -133,10 +142,10 @@ sealed class NavDest(
                 CoroutinesAndFlow
             )
         )
-    )*/
+    )
 
-    /*data object ArchitectureMVC : NavDest(NavDrawerSection(S_MVC, MVCActivity::class.java))
-    data object ArchitectureMVP : NavDest(NavDrawerSection(S_MVP, MVPActivity::class.java))
+    data object ArchitectureMVC : NavDest(NavDrawerSection(S_MVC, targetActivity = MVCActivity::class.java))
+    data object ArchitectureMVP : NavDest(NavDrawerSection(S_MVP, targetActivity = MVPActivity::class.java))
     data object ArchitectureTypes : NavDest(
         NavDrawerTopic(
             T_ARCHITECTURE,
@@ -146,18 +155,18 @@ sealed class NavDest(
                 CoroutinesExample
             )
         )
-    )*/
+    )
 
     companion object {
         val drawerTopicList = listOf(
-            UIComponents
-            //AppEntryPoints,
-            //AppNavigation,
-            //ArchitectureComponents,
-            //IntentExample,
-            //Storages,
-            //CoroutinesExample,
-            //ArchitectureTypes
+            UIComponents,
+            AppEntryPoints,
+            AppNavigation,
+            ArchitectureComponents,
+            IntentExample,
+            Storages,
+            CoroutinesExample,
+            ArchitectureTypes
         )
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -78,6 +79,17 @@ fun TextView.setTextViewColor(@ColorRes colorId: Int) =
 
 fun Drawable?.setDrawableTint(context: Context, @ColorRes colorId: Int) =
     this?.setTint(ContextCompat.getColor(context, colorId))
+
+
+fun View.toggleColor(
+    switch: Boolean,
+    color1: Int,
+    color2: Int,
+    context: Context
+) {
+    val btnColor = if (switch) color1 else color2
+    setBackgroundColor(ContextCompat.getColor(context, btnColor))
+}
 
 fun ImageView.loadImage(
     imageUrl: String?,

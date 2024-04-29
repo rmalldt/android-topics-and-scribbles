@@ -1,19 +1,11 @@
 package com.rm.android_fundamentals.base
 
-import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
 import com.rm.android_fundamentals.databinding.FragmentMainExpandableTopicBinding
-import com.rm.android_fundamentals.legacy.Chapter
-import com.rm.android_fundamentals.legacy.SubTopicAdapter
-import com.rm.android_fundamentals.utils.setGone
-import com.rm.android_fundamentals.utils.setVisible
-import timber.log.Timber
 
 class MainExpandableTopicFragment : Fragment() {
 
@@ -28,47 +20,4 @@ class MainExpandableTopicFragment : Fragment() {
         _binding = FragmentMainExpandableTopicBinding.inflate(inflater, container, false)
         return binding.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        render()
-    }
-
-    private fun render() {
-        val topic = getTopic()
-        Timber.d("topic: $topic")
-
-        when (topic) {
-            null -> {
-                binding.rvTopicFragment.setGone()
-                binding.txtMainTitle.setVisible()
-                binding.txtMainDescription.setVisible()
-            }
-            else -> {
-                binding.rvTopicFragment.setVisible()
-                binding.txtMainTitle.setGone()
-                binding.txtMainDescription.setGone()
-                initRecyclerView(topic)
-            }
-        }
-    }
-
-    private fun initRecyclerView(topic: Chapter) {
-        binding.rvTopicFragment.apply {
-            adapter = SubTopicAdapter(topic) { subTopic ->
-                val intent = Intent(requireActivity(), subTopic.targetActivity)
-                startActivity(intent)
-            }
-            layoutManager = LinearLayoutManager(requireContext())
-        }
-    }
-
-
-    private fun getTopic(): Chapter? =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            arguments?.getParcelable("topic", Chapter::class.java)
-        } else {
-            arguments?.getParcelable("topic")
-        }
 }

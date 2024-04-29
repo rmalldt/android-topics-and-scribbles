@@ -4,20 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp"
+    android:background="@color/lightGray"
     tools:context=".topics.t1_uicomponents.layouts.ConstraintLayoutFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/recipesRowCardView"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvTitleConstraint"
+        android:layout_width="@dimen/dimen0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="4dp"
-        android:elevation="1dp"
+        android:paddingTop="@dimen/dimen16dp"
+        android:paddingStart="@dimen/dimen16dp"
+        android:paddingEnd="@dimen/dimen0dp"
+        android:text="ConstraintLayout"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDescriptionConstraint"
+        android:layout_width="@dimen/dimen0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dimen4dp"
+        android:paddingStart="@dimen/dimen16dp"
+        android:padding="@dimen/dimen4dp"
+        android:text="@string/constraint_layout_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleConstraint" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewConstraint"
+        android:layout_width="@dimen/dimen0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginTop="@dimen/dimen8dp"
+        android:elevation="1dp"
         app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDescriptionConstraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,13 +52,13 @@
 
             <ImageView
                 android:id="@+id/ivRecipe"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:scaleType="centerCrop"
+                android:src="@drawable/les_paul"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/les_paul" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvNameTitle"
@@ -125,6 +151,87 @@
                 android:textColor="@color/green"
                 app:layout_constraintStart_toEndOf="@+id/tvCookingDuration"
                 app:layout_constraintTop_toBottomOf="@+id/ivVeg" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/dimen0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dimen8dp"
+        android:layout_marginHorizontal="@dimen/dimen4dp"
+        android:backgroundTint="@color/primaryLight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewConstraint">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/txtTo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="To"
+                android:textSize="@dimen/txtMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtSubject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Subject"
+                android:textSize="@dimen/txtMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTo" />
+
+            <EditText
+                android:id="@+id/txtMessage"
+                android:layout_width="0dp"
+                android:layout_height="230dp"
+                android:gravity="top"
+                android:hint="Message"
+                android:textSize="@dimen/txtMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtSubject" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMessage">
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="Cancel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtMessage" />
+
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="Send"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtMessage" />
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

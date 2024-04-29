@@ -25,10 +25,7 @@ object NavConstants {
     const val T_INTENTS = "Intents"
     const val S_INTENT_TYPES = "Intent types"
 
-    const val T_LAYOUTS = "Layouts"
-    const val S_LAYOUT_TYPES = "Layout types"
-
-    const val T_STORAGE = "STORAGE"
+    const val T_STORAGE = "Storage"
     const val S_STORAGE_TYPES = "Storage types"
 
     const val T_COROUTINES = "Coroutines"

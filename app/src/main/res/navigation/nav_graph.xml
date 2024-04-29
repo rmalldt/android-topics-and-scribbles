@@ -2,16 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
-
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/collectionFragment">
     <fragment
-        android:id="@+id/oneFragment"
-        android:name="com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.OneFragment"
-        android:label="fragment_one"
-        tools:layout="@layout/fragment_one" />
-    <fragment
-        android:id="@+id/twoFragment"
-        android:name="com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.TwoFragment"
-        android:label="fragment_two"
-        tools:layout="@layout/fragment_two" />
+        android:id="@+id/collectionFragment"
+        android:name="com.rm.android_fundamentals.topics.t2_appnavigation.s2_viewpager.CollectionFragment"
+        android:label="fragment_collection"
+        tools:layout="@layout/fragment_collection" />
 </navigation>
