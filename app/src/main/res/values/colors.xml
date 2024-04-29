@@ -9,10 +9,20 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
     <color name="white">#FFFFFF</color>
+    <color name="red">#F30808</color>
+    <color name="green">#00FF00</color>
+    <color name="orange">#FB8C00</color>
     <color name="transparent">#00000000</color>
 
 
+
+    <color name="lightGray">#DDDDDD</color>
+    <color name="lightBlue">#42A5F5</color>
+    <color name="lightGreen">#26A69A</color>
+    <color name="lightYellow">#FFEE58</color>
+    <color name="gray">#AFAFAF</color>
     <color name="darkerGray">#2E2D2D</color>
+
 
 
 

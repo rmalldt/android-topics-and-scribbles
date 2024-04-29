@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.base
+package com.rm.android_fundamentals.topics.t1_uicomponents.drawernavigation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -31,7 +31,7 @@ class ExpandableTopicAdapter(
         return TopicViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: TopicViewHolder , position: Int) {
+    override fun onBindViewHolder(holder: TopicViewHolder, position: Int) {
         val item = navDrawerData[position]
 
         holder.binding.run {
@@ -51,7 +51,7 @@ class ExpandableTopicAdapter(
                     val paddingInPx = dpToPx(20, txtExpandableTitle.context)
                     rvSections.apply {
                         adapter = ExpandableTopicAdapter(item.data.sections, onSectionClicked, indent + paddingInPx)
-                        layoutManager = LinearLayoutManager(holder.binding.root.context)
+                        layoutManager = LinearLayoutManager(root.context)
                     }
 
                     layoutExpandable.setOnClickListener {
@@ -64,12 +64,13 @@ class ExpandableTopicAdapter(
                     txtExpandableTitle.text = item.data.title
                     txtExpandableTitle.setPadding(indent, PADDINGS_TOP_PX, PADDING_END_PX, PADDINGS_BOTTOM_PX )
                     iconArrow.setGone()
+
                     layoutExpandable.setOnClickListener {
                         onSectionClicked(item.data)
                     }
                 }
 
-                else -> {}
+                else -> { /*do nothing*/ }
             }
         }
     }

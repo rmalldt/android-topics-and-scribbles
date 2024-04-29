@@ -7,26 +7,11 @@
     <fragment
         android:id="@+id/drawerMainFragment"
         android:name="com.rm.android_fundamentals.base.MainExpandableTopicFragment"
-        android:label="fragment_drawer_main"
+        android:label="Home"
         tools:layout="@layout/fragment_main_expandable_topic" />
     <fragment
         android:id="@+id/layoutsFragment"
         android:name="com.rm.android_fundamentals.topics.t1_uicomponents.layouts.LayoutsFragment"
-        android:label="fragment_layouts"
+        android:label="Layouts"
         tools:layout="@layout/fragment_layouts" />
-    <fragment
-        android:id="@+id/linearLayoutFragment"
-        android:name="com.rm.android_fundamentals.topics.t1_uicomponents.layouts.LinearLayoutFragment"
-        android:label="fragment_linear_layout"
-        tools:layout="@layout/fragment_linear_layout" />
-    <fragment
-        android:id="@+id/relativeLayoutFragment"
-        android:name="com.rm.android_fundamentals.topics.t1_uicomponents.layouts.RelativeLayoutFragment"
-        android:label="fragment_relative_layout"
-        tools:layout="@layout/fragment_relative_layout" />
-    <fragment
-        android:id="@+id/constraintLayoutFragment"
-        android:name="com.rm.android_fundamentals.topics.t1_uicomponents.layouts.ConstraintLayoutFragment"
-        android:label="fragment_constraint_layout"
-        tools:layout="@layout/fragment_constraint_layout" />
 </navigation>

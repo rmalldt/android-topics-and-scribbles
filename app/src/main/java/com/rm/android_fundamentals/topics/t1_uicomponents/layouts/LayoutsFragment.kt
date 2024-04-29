@@ -1,18 +1,12 @@
 package com.rm.android_fundamentals.topics.t1_uicomponents.layouts
 
-import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
-import com.rm.android_fundamentals.R
 import com.rm.android_fundamentals.databinding.FragmentLayoutsBinding
-import com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.OneFragment
-import com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.ThreeFragment
-import com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.TwoFragment
 
 class LayoutsFragment : Fragment() {
 
@@ -48,15 +42,13 @@ class LayoutsFragment : Fragment() {
             btnPrev.isEnabled = false
 
             btnNext.setOnClickListener {
-                binding.tabLayout.getTabAt(initialIndex + 1)?.select()
-                initialIndex++
+                binding.tabLayout.getTabAt(++initialIndex)?.select()
                 controlTabNavigationButtons(fragments.size - 1)
             }
 
             btnPrev.setOnClickListener {
-                binding.tabLayout.getTabAt(initialIndex - 1)?.select()
-                initialIndex--
-                controlTabNavigationButtons(fragments.size)
+                binding.tabLayout.getTabAt(--initialIndex)?.select()
+                controlTabNavigationButtons(fragments.size - 1)
             }
         }
     }

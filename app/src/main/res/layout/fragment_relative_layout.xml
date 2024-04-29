@@ -1,14 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".topics.t1_uicomponents.layouts.RelativeLayoutFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Relative Layout" />
+        android:background="@color/lightGray"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tv1Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_alignParentStart="true"
+            android:text="alignParentStart" />
+
+        <TextView
+            android:id="@+id/tv2Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_alignParentEnd="true"
+            android:text="alignParentEnd" />
+
+        <TextView
+            android:id="@+id/tv3Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_centerHorizontal="true"
+            android:text="centerHorizontal" />
+
+        <TextView
+            android:id="@+id/tv4Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="alignParentBottom\ncenterHorizontal" />
+
+        <TextView
+            android:id="@+id/tv5Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_above="@+id/btnRelative"
+            android:layout_centerHorizontal="true"
+            android:text="layout_above\ncenterHorizontal" />
+
+        <TextView
+            android:id="@+id/tv6Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_above="@+id/btnRelative"
+            android:text="layout_above" />
+
+        <TextView
+            android:id="@+id/tv7Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_above="@+id/btnRelative"
+            android:layout_alignParentEnd="true"
+            android:text="layout_above\nalignParentEnd" />
+
+        <TextView
+            android:id="@+id/tv8Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_below="@+id/btnRelative"
+            android:layout_centerHorizontal="true"
+            android:text="layout_below\ncenterHorizontal" />
+
+        <TextView
+            android:id="@+id/tv9Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_below="@+id/btnRelative"
+            android:layout_toEndOf="@id/tv8Relative"
+            android:text="layout_below\ntoEndOf" />
+
+        <TextView
+            android:id="@+id/tv10Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_below="@+id/btnRelative"
+            android:layout_toStartOf="@id/tv8Relative"
+            android:text="layout_below\ntoStartOf" />
+
+        <Button
+            android:id="@+id/btnRelative"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="centerInParent" />
+
+        <TextView
+            android:id="@+id/tv11Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_alignTop="@+id/tv4Relative"
+            android:layout_toStartOf="@id/tv4Relative"
+            android:text="alignTop\ntoStartOf" />
+
+        <TextView
+            android:id="@+id/tv12Relative"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="@color/lightYellow"
+            android:layout_alignTop="@+id/tv4Relative"
+            android:layout_toEndOf="@id/tv4Relative"
+            android:text="alignTop\ntoEndOf" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
