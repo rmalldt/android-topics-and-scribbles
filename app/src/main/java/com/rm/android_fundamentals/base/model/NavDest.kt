@@ -12,6 +12,7 @@ import com.rm.android_fundamentals.base.model.NavConstants.S_LISTENER_WITHOUT_LI
 import com.rm.android_fundamentals.base.model.NavConstants.S_LIVEDATA
 import com.rm.android_fundamentals.base.model.NavConstants.S_MVC
 import com.rm.android_fundamentals.base.model.NavConstants.S_MVP
+import com.rm.android_fundamentals.base.model.NavConstants.S_RECYCLER_VIEWS
 import com.rm.android_fundamentals.base.model.NavConstants.S_REGISTER_ACTIVITY_FOR_RESULT
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_INSTANCE_STATE
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_STATE_HANDLE
@@ -49,10 +50,12 @@ sealed class NavDest(
 ) {
 
     data object Layouts : NavDest(NavDrawerSection(S_LAYOUTS, R.id.layoutsFragment))
+    data object RecyclerViews : NavDest(NavDrawerSection(S_RECYCLER_VIEWS, R.id.recyclerViewsFragment))
     data object UIComponents : NavDest(
         NavDrawerTopic(T_UI_COMPONENTS,
             listOf(
-                Layouts
+                Layouts,
+                RecyclerViews
             )
         )
     )

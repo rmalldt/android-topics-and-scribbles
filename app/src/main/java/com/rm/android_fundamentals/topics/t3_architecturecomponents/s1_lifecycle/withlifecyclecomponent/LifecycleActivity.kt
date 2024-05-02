@@ -8,7 +8,6 @@ import com.rm.android_fundamentals.utils.toast
 class LifecycleActivity : BaseActivity() {
 
     private lateinit var binding: ActivityLifecycleBinding
-
     private lateinit var myObserver: MyLifecycleObserver
 
     override fun onCreate(savedInstanceState: Bundle?) {

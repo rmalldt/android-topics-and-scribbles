@@ -14,4 +14,9 @@
         android:name="com.rm.android_fundamentals.topics.t1_uicomponents.layouts.LayoutsFragment"
         android:label="Layouts"
         tools:layout="@layout/fragment_layouts" />
+    <fragment
+        android:id="@+id/recyclerViewsFragment"
+        android:name="com.rm.android_fundamentals.topics.t1_uicomponents.viewpagers.RecyclerViewsFragment"
+        android:label="Recycler Views"
+        tools:layout="@layout/fragment_recycler_views" />
 </navigation>
