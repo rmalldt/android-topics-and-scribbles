@@ -10,12 +10,15 @@
         android:id="@+id/includeToolbar"
         layout="@layout/toolbar" />
 
-    <Button
-        android:id="@+id/btnPassData"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTxtInput"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Pass data to another activity"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Type something"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/includeToolbar" />
@@ -24,11 +27,11 @@
         android:id="@+id/btnPassObject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         android:text="Pass parcelable to another activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPassData" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtInput" />
 
     <Button
         android:id="@+id/btnResult1"
@@ -49,8 +52,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnResult1" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

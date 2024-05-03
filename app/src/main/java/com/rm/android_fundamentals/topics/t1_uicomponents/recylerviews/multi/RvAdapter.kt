@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t1_uicomponents.viewpagers
+package com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.multi
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,6 @@ import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.databinding.RecyclerviewItemBinding
 import com.rm.android_fundamentals.databinding.RvItemBinding
 
 class RvAdapter : RecyclerView.Adapter<RvAdapter.RvViewHolder>() {

@@ -16,7 +16,12 @@
         tools:layout="@layout/fragment_layouts" />
     <fragment
         android:id="@+id/recyclerViewsFragment"
-        android:name="com.rm.android_fundamentals.topics.t1_uicomponents.viewpagers.RecyclerViewsFragment"
+        android:name="com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.multi.RecyclerViewsFragment"
         android:label="Recycler Views"
         tools:layout="@layout/fragment_recycler_views" />
+    <fragment
+        android:id="@+id/simpleRvFragment"
+        android:name="com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.simple.SimpleRvFragment"
+        android:label="Simple RecyclerView"
+        tools:layout="@layout/fragment_simple_rv" />
 </navigation>

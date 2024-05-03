@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t1_uicomponents.viewpagers
+package com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.multi
 
 object RvTestData {
     fun getStringData(): List<String> {

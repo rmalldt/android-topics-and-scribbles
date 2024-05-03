@@ -1,14 +1,12 @@
-package com.rm.android_fundamentals.topics.t1_uicomponents.viewpagers
+package com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.multi
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.LinearLayoutCompat.OrientationMode
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.rm.android_fundamentals.databinding.FragmentRecyclerViewsBinding
 
 class RecyclerViewsFragment : Fragment() {

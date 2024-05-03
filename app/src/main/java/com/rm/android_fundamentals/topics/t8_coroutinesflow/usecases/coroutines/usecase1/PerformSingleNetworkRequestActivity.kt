@@ -5,6 +5,7 @@ import androidx.activity.viewModels
 import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityPerformSingleNetworkRequestBinding
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.base.useCase1Description
+import com.rm.android_fundamentals.utils.EspressoIdlingResource
 import com.rm.android_fundamentals.utils.fromHtml
 import com.rm.android_fundamentals.utils.setGone
 import com.rm.android_fundamentals.utils.setVisible
@@ -28,6 +29,7 @@ class PerformSingleNetworkRequestActivity : BaseActivity() {
         }
 
         binding.btnPerformNetworkRequest.setOnClickListener {
+            EspressoIdlingResource.increment()
             viewModel.performSingleNetworkRequest()
         }
     }
@@ -53,6 +55,7 @@ class PerformSingleNetworkRequestActivity : BaseActivity() {
         tvResult.text = fromHtml(
             "<b>Recent Android Version</b><br>${readableVersions.joinToString(separator = "<br>")}"
         )
+        EspressoIdlingResource.decrement()
     }
 
     private fun onError(uiState: UiState.Error) = with(binding) {

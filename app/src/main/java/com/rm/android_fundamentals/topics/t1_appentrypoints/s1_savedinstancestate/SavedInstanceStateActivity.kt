@@ -8,6 +8,7 @@ import android.widget.TextView
 import com.rm.android_fundamentals.databinding.ActivitySavedInstanceBinding
 import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.utils.EMPTY_STRING
+import com.rm.android_fundamentals.utils.hideKeyboard
 
 class SavedInstanceStateActivity : BaseActivity() {
 
@@ -34,11 +35,14 @@ class SavedInstanceStateActivity : BaseActivity() {
             binding.tvNum.text = num.toString()
         }
 
-       binding.btnSubmit.setOnClickListener {
-           binding.txtInfo.text = binding.txtTypeSomething.text
-       }
+        binding.btnSubmit.setOnClickListener {
+            binding.txtInfo.text = binding.txtTypeSomething.text
+            it.hideKeyboard()
+        }
 
-        displayEditTextValueOnTyping(binding.txtTypeSomething, binding.txtInfo)
+        binding.btnNextActivity.setOnClickListener {
+
+        }
     }
 
     /**
@@ -68,7 +72,7 @@ class SavedInstanceStateActivity : BaseActivity() {
         binding.txtInfo.text = savedText
     }
 
-    private fun displayEditTextValueOnTyping(editText: EditText, textView: TextView) {
+    /*private fun displayEditTextValueOnTyping(editText: EditText, textView: TextView) {
         editText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -78,7 +82,7 @@ class SavedInstanceStateActivity : BaseActivity() {
                 textView.text = s.toString()
             }
         })
-    }
+    }*/
 
     override fun getTitleToolbar() = "SavedInstanceState activity"
 

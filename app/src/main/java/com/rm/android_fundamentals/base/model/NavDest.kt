@@ -29,7 +29,6 @@ import com.rm.android_fundamentals.base.model.NavConstants.T_STORAGE
 import com.rm.android_fundamentals.base.model.NavConstants.T_UI_COMPONENTS
 import com.rm.android_fundamentals.topics.t1_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity
 import com.rm.android_fundamentals.topics.t1_appentrypoints.s2_passdatabetweenactivities.ResultActivity
-import com.rm.android_fundamentals.topics.t1_uicomponents.layouts.LayoutsFragment
 import com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.FragmentHostManualActivity
 import com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentxmlauto.FragmentHostActivity
 import com.rm.android_fundamentals.topics.t2_appnavigation.s2_viewpager.HostingActivity
@@ -50,7 +49,7 @@ sealed class NavDest(
 ) {
 
     data object Layouts : NavDest(NavDrawerSection(S_LAYOUTS, R.id.layoutsFragment))
-    data object RecyclerViews : NavDest(NavDrawerSection(S_RECYCLER_VIEWS, R.id.recyclerViewsFragment))
+    data object RecyclerViews : NavDest(NavDrawerSection(S_RECYCLER_VIEWS, R.id.simpleRvFragment))
     data object UIComponents : NavDest(
         NavDrawerTopic(T_UI_COMPONENTS,
             listOf(
