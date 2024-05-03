@@ -9,6 +9,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityResultBinding
 import com.rm.android_fundamentals.utils.toast
+import timber.log.Timber
 
 class ResultActivity : BaseActivity() {
 
@@ -28,33 +29,20 @@ class ResultActivity : BaseActivity() {
      * Pass data to ResultProducingActivity.
      */
     private fun passData() {
-        binding.btnPassData.setOnClickListener {
-            val data1 = binding.btnResult1.text.toString()
-            val data2 = binding.btnResult2.text.toString()
-            prepareData(data1, data2)
-        }
-
         binding.btnPassObject.setOnClickListener {
-            val myObject = MyObject(10, "MyParcelableObject")
-            prepareData(myObject)
-        }
-    }
+            val text = binding.editTxtInput.text.toString()
+            if (text.isNotEmpty()) {
+                val myObject = MyObject(10, text)
+                val bundle = Bundle()
+                bundle.putParcelable("obj", myObject)
 
-    private fun <T> prepareData(vararg dataList: T) {
-        val intent = Intent(this, ResultProducingActivity::class.java)
-        val bundle = Bundle()
-
-        for (i in dataList.indices) {
-            if (dataList[i] is String) {
-                bundle.putString("Data${i+1}", dataList[i] as String)
-            }
-
-            if (dataList[i] is MyObject) {
-                bundle.putParcelable("OBJ", dataList[i] as MyObject)
+                val intent = Intent(this, ResultProducingActivity::class.java)
+                intent.putExtras(bundle)
+                startActivity(intent)
+            } else {
+                toast("Please type something")
             }
         }
-        intent.putExtras(bundle)
-        startActivity(intent)
     }
 
     private fun startForResult() {

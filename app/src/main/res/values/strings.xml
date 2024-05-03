@@ -62,4 +62,6 @@
     <string name="relativelayout_title">RelativeLayout</string>
     <string name="relative_layout_description">The layout in which elements arranges itself relative to its siblings or parent.</string>
     <string name="constraint_layout_description">It is similar to RelativeLayout in that all views are laid out according to relative positions between sibling views and parent layout, additionally auto-calculates constraints to group elements by forming a chain that allows to arrange view without creating nested layouts.</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
 </resources>

@@ -27,23 +27,15 @@ class ResultProducingActivity : BaseActivity() {
      */
     private fun getData() {
         val bundle = intent.extras
-
         bundle?.let {
             // If object was sent
             val myObject = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                bundle.getParcelable("OBJ", MyObject::class.java)
+                bundle.getParcelable("obj", MyObject::class.java)
             } else {
-                bundle.getParcelable("OBJ")
-            }
-            myObject?.let {
-                this@ResultProducingActivity.toast("MyObject(id: ${it.id}, name: ${it.name})")
-                return
+                bundle.getParcelable("obj")
             }
 
-            // If data was sent
-            val data1 = bundle.getString("Data1")
-            val date2 = bundle.getString("Data2")
-            this@ResultProducingActivity.toast("Date1: $data1, Data2: $date2")
+            binding.txtReceivedData.text = myObject?.name
         }
     }
 

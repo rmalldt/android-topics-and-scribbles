@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-601" />
-                            <option name="y" value="-178" />
+                            <option name="x" value="-884" />
+                            <option name="y" value="-391" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -25,8 +25,32 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-855" />
-                            <option name="y" value="-186" />
+                            <option name="x" value="-886" />
+                            <option name="y" value="-75" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="recyclerViewsFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-524" />
+                            <option name="y" value="-95" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="simpleRvFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-689" />
+                            <option name="y" value="-112" />
                           </Point>
                         </option>
                       </LayoutPositions>

@@ -71,13 +71,6 @@ class CommonIntentsActivity : BaseActivity() {
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }
-
-        // Alternatively, uses try-catch block
-        /*try {
-            startActivity(intent)
-        } catch (ex: ActivityNotFoundException) {
-            toastMessage(this@CommonIntentsActivity, "App not available")
-        }*/
     }
 
     /**
@@ -133,23 +126,17 @@ class CommonIntentsActivity : BaseActivity() {
          * So, manually inserting image values to get the uri for writing out
          * the image bitmap to save the image in the gallery.
          */
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            val values = ContentValues().apply {
-                put(MediaStore.MediaColumns.DISPLAY_NAME, "$timeStamp.jpg")
-                put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DCIM)
-            }
-
-            val resolver = contentResolver
-
-            val uri: Uri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
-                ?: throw IOException("Failed to create a new MediaStore record")
-            outputStream = resolver.openOutputStream(uri)
-        } else {
-            val storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString()
-            val image = File(storageDir, "$timeStamp.jpg")
-            outputStream = FileOutputStream(image)
+        val values = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, "$timeStamp.jpg")
+            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+            put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DCIM)
         }
+
+        val resolver = contentResolver
+
+        val uri: Uri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+            ?: throw IOException("Failed to create a new MediaStore record")
+        outputStream = resolver.openOutputStream(uri)
 
         outputStream?.use {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 95, it)
