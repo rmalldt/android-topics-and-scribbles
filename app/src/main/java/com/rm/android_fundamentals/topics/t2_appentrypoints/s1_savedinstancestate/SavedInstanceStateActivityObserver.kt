@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t1_appentrypoints.s1_savedinstancestate
+package com.rm.android_fundamentals.topics.t2_appentrypoints.s1_savedinstancestate
 
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner

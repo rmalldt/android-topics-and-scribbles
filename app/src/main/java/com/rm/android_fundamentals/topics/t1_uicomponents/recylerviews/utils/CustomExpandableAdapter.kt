@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.base
+package com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.utils
 
 import android.content.Context
 import android.view.LayoutInflater

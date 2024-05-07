@@ -1,11 +1,10 @@
-package com.rm.android_fundamentals.topics.t1_appentrypoints.s2_passdatabetweenactivities
+package com.rm.android_fundamentals.topics.t2_appentrypoints.s2_passdatabetweenactivities
 
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityResultProducingBinding
-import com.rm.android_fundamentals.utils.toast
 
 class ResultProducingActivity : BaseActivity() {
 

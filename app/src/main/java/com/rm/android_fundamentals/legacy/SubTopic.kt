@@ -2,8 +2,8 @@ package com.rm.android_fundamentals.legacy
 
 import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
-import com.rm.android_fundamentals.topics.t1_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity
-import com.rm.android_fundamentals.topics.t1_appentrypoints.s2_passdatabetweenactivities.ResultActivity
+import com.rm.android_fundamentals.topics.t2_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity
+import com.rm.android_fundamentals.topics.t2_appentrypoints.s2_passdatabetweenactivities.ResultActivity
 import com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.FragmentHostManualActivity
 import com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentxmlauto.FragmentHostActivity
 import com.rm.android_fundamentals.topics.t2_appnavigation.s2_viewpager.HostingActivity
@@ -15,7 +15,7 @@ import com.rm.android_fundamentals.topics.t3_architecturecomponents.s3_livedata.
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s4_coroutinescopes.CoroutineScopesActivity
 import com.rm.android_fundamentals.topics.t4_appcomponents.AppComponentsActivity
 import com.rm.android_fundamentals.topics.t5_intents.IntentActivity
-import com.rm.android_fundamentals.topics.t7_storagetypes.StorageTypesActivity
+import com.rm.android_fundamentals.topics.t7_storagetypes.storagetypes.StorageTypesActivity
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.CoroutinesActivity
 import com.rm.android_fundamentals.topics.t9_architectures.mvc.MVCActivity
 import com.rm.android_fundamentals.topics.t9_architectures.mvp.MVPActivity

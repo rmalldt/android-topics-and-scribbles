@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t7_storagetypes
+package com.rm.android_fundamentals.topics.t7_storagetypes.storagetypes
 
 import android.Manifest
 import android.content.Context

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.rm.android_fundamentals.databinding.FragmentMainExpandableTopicBinding
 
-class MainExpandableTopicFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     private var _binding: FragmentMainExpandableTopicBinding? = null
     private val binding get() = _binding!!

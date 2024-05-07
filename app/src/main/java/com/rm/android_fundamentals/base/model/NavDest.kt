@@ -3,7 +3,8 @@ package com.rm.android_fundamentals.base.model
 import com.rm.android_fundamentals.R
 import com.rm.android_fundamentals.base.model.NavConstants.S_COROUTINES
 import com.rm.android_fundamentals.base.model.NavConstants.S_COROUTINE_SCOPE
-import com.rm.android_fundamentals.base.model.NavConstants.S_DYNAMIC_RECYCLER_VIEW
+import com.rm.android_fundamentals.base.model.NavConstants.S_ADJUSTABLE_RECYCLER_VIEW
+import com.rm.android_fundamentals.base.model.NavConstants.S_CONTENT_PROVIDER
 import com.rm.android_fundamentals.base.model.NavConstants.S_FRAGMENTS_PROGRAMMATICALLY
 import com.rm.android_fundamentals.base.model.NavConstants.S_FRAGMENT_XML
 import com.rm.android_fundamentals.base.model.NavConstants.S_INTENT_TYPES
@@ -28,8 +29,8 @@ import com.rm.android_fundamentals.base.model.NavConstants.T_COROUTINES
 import com.rm.android_fundamentals.base.model.NavConstants.T_INTENTS
 import com.rm.android_fundamentals.base.model.NavConstants.T_STORAGE
 import com.rm.android_fundamentals.base.model.NavConstants.T_UI_COMPONENTS
-import com.rm.android_fundamentals.topics.t1_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity
-import com.rm.android_fundamentals.topics.t1_appentrypoints.s2_passdatabetweenactivities.ResultActivity
+import com.rm.android_fundamentals.topics.t2_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity
+import com.rm.android_fundamentals.topics.t2_appentrypoints.s2_passdatabetweenactivities.ResultActivity
 import com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.FragmentHostManualActivity
 import com.rm.android_fundamentals.topics.t2_appnavigation.s1_fragments.fragmentxmlauto.FragmentHostActivity
 import com.rm.android_fundamentals.topics.t2_appnavigation.s2_viewpager.HostingActivity
@@ -40,7 +41,7 @@ import com.rm.android_fundamentals.topics.t3_architecturecomponents.s2_viewmodel
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s3_livedata.NameActivity
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s4_coroutinescopes.CoroutineScopesActivity
 import com.rm.android_fundamentals.topics.t5_intents.IntentActivity
-import com.rm.android_fundamentals.topics.t7_storagetypes.StorageTypesActivity
+import com.rm.android_fundamentals.topics.t7_storagetypes.storagetypes.StorageTypesActivity
 import com.rm.android_fundamentals.topics.t8_coroutinesflow.CoroutinesActivity
 import com.rm.android_fundamentals.topics.t9_architectures.mvc.MVCActivity
 import com.rm.android_fundamentals.topics.t9_architectures.mvp.MVPActivity
@@ -51,7 +52,7 @@ sealed class NavDest(
 
     data object Layouts : NavDest(NavDrawerSection(S_LAYOUTS, R.id.layoutsFragment))
     data object RecyclerViews : NavDest(NavDrawerSection(S_RECYCLER_VIEW, R.id.simpleRvFragment))
-    data object DynamicRecyclerView : NavDest(NavDrawerSection(S_DYNAMIC_RECYCLER_VIEW, R.id.recyclerViewsFragment))
+    data object DynamicRecyclerView : NavDest(NavDrawerSection(S_ADJUSTABLE_RECYCLER_VIEW, R.id.recyclerViewsFragment))
     data object UIComponents : NavDest(
         NavDrawerTopic(T_UI_COMPONENTS,
             listOf(
@@ -129,11 +130,13 @@ sealed class NavDest(
         )
     )
 
+    data object ContentProviderExample : NavDest(NavDrawerSection(S_CONTENT_PROVIDER, R.id.contentProviderFragment))
     data object StorageTypes : NavDest(NavDrawerSection(S_STORAGE_TYPES, targetActivity = StorageTypesActivity::class.java))
     data object Storages : NavDest(
         NavDrawerTopic(
             T_STORAGE,
             listOf(
+                ContentProviderExample,
                 StorageTypes
             )
         )

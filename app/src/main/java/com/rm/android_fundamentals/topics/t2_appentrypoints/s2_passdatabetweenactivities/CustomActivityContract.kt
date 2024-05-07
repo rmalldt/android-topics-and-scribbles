@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t1_appentrypoints.s2_passdatabetweenactivities
+package com.rm.android_fundamentals.topics.t2_appentrypoints.s2_passdatabetweenactivities
 
 import android.app.Activity
 import android.content.Context

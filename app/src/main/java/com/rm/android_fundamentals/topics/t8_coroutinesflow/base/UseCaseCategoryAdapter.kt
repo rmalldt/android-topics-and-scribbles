@@ -20,7 +20,7 @@ class UseCaseCategoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.txtRv.apply {
+        holder.binding.txtRvItem.apply {
             text = useCaseCategories[position].categoryName
 
             setOnClickListener {

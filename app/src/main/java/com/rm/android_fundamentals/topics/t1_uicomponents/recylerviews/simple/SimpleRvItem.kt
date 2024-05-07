@@ -5,7 +5,7 @@ data class SimpleRvItem(
     var switchState: Boolean
 ) {
     companion object {
-        fun getSimpleRvItems(): List<SimpleRvItem> {
+        fun getSimpleRvItems(): ArrayList<SimpleRvItem> {
             val dataList = arrayListOf<SimpleRvItem>()
             repeat(50) {
                 val item = SimpleRvItem("Item: $it", false)

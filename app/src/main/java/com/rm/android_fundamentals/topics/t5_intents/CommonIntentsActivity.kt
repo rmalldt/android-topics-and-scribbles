@@ -167,19 +167,4 @@ class CommonIntentsActivity : BaseActivity() {
         const val DEFAULT_ALARM_MSG = "My Alarm"
         private const val PERMISSION_CODE = 1001
     }
-
-    // Deprecated
-    /*private fun dispatchTakePicture() {
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { captureIntent ->
-            captureIntent.resolveActivity(packageManager)?.also {
-                // Use file provider to get the image uri for the image file
-                photoUri = FileProvider.getUriForFile(
-                    this,
-                    "com.rm.android_fundamentals.FileProvider",
-                    createImageFile())
-                //captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri)
-                cameraLauncher.launch(photoUri)
-            }
-        }
-    }*/
 }

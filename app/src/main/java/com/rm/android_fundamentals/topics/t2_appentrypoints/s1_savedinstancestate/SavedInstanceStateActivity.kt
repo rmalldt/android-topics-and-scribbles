@@ -1,10 +1,6 @@
-package com.rm.android_fundamentals.topics.t1_appentrypoints.s1_savedinstancestate
+package com.rm.android_fundamentals.topics.t2_appentrypoints.s1_savedinstancestate
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.widget.EditText
-import android.widget.TextView
 import com.rm.android_fundamentals.databinding.ActivitySavedInstanceBinding
 import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.utils.EMPTY_STRING

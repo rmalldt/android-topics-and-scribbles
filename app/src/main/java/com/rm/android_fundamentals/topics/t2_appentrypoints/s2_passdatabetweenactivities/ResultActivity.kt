@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t1_appentrypoints.s2_passdatabetweenactivities
+package com.rm.android_fundamentals.topics.t2_appentrypoints.s2_passdatabetweenactivities
 
 import android.app.Activity
 import android.content.Intent
@@ -9,7 +9,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityResultBinding
 import com.rm.android_fundamentals.utils.toast
-import timber.log.Timber
 
 class ResultActivity : BaseActivity() {
 

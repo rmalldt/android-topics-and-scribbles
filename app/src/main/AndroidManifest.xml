@@ -12,6 +12,7 @@
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
@@ -19,6 +20,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- for legacy support -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- for legacy support -->
+
     <!-- Required for resolveActivity() method -->
     <queries>
         <intent>
@@ -136,7 +138,7 @@
             android:name=".topics.t5_intents.RedirectionIntentsActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t7_storagetypes.StorageTypesActivity"
+            android:name=".topics.t7_storagetypes.storagetypes.StorageTypesActivity"
             android:exported="false" />
         <activity
             android:name=".topics.t5_intents.CommonIntentsActivity"
@@ -156,16 +158,16 @@
             android:name=".topics.t5_intents.IntentActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t1_appentrypoints.s2_passdatabetweenactivities.ResultProducingActivity"
+            android:name=".topics.t2_appentrypoints.s2_passdatabetweenactivities.ResultProducingActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t1_appentrypoints.s2_passdatabetweenactivities.ResultActivity"
+            android:name=".topics.t2_appentrypoints.s2_passdatabetweenactivities.ResultActivity"
             android:exported="false" />
         <activity
             android:name=".topics.t6_viewlayouts.s1_recyclerview.RecyclerViewExActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t1_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity"
+            android:name=".topics.t2_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity"
             android:exported="false" />
 
         <provider

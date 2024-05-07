@@ -4,8 +4,8 @@ object NavConstants {
 
     const val T_UI_COMPONENTS = "UI components"
     const val S_LAYOUTS = "Layouts"
-    const val S_RECYCLER_VIEW = "Recycler Views"
-    const val S_DYNAMIC_RECYCLER_VIEW = "Dynamic RecyclerView"
+    const val S_RECYCLER_VIEW = "RecyclerView"
+    const val S_ADJUSTABLE_RECYCLER_VIEW = "Adjustable RecyclerView"
 
     const val T_APP_ENTRY_POINTS = "App entry points"
     const val S_SAVED_INSTANCE_STATE = "Saved instance state"
@@ -28,6 +28,7 @@ object NavConstants {
     const val S_INTENT_TYPES = "Intent types"
 
     const val T_STORAGE = "Storage"
+    const val S_CONTENT_PROVIDER = "Content Provider"
     const val S_STORAGE_TYPES = "Storage types"
 
     const val T_COROUTINES = "Coroutines"

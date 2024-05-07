@@ -1,5 +1,6 @@
 package com.rm.android_fundamentals.topics.t5_intents
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -10,12 +11,13 @@ import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
-import androidx.core.content.ContextCompat
 import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityIntentBinding
+import com.rm.android_fundamentals.legacy.BaseActivity
+import com.rm.android_fundamentals.utils.toast
 
 class IntentActivity : BaseActivity() {
 
@@ -26,7 +28,7 @@ class IntentActivity : BaseActivity() {
         binding = ActivityIntentBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        askNotificationPermission()
+        //askNotificationPermission()
 
         gotoMainActivityExplicit()
         gotoMainActivityImplicit()
@@ -41,6 +43,27 @@ class IntentActivity : BaseActivity() {
         binding.btnRedirectionIntents.setOnClickListener {
             val intent = Intent(this, RedirectionIntentsActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnPermissions.setOnClickListener {
+            activityResultLauncherForPermission.launch(Manifest.permission.READ_CONTACTS)
+        }
+
+        binding.btnMultiplePermissions.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                activityResultLauncherForMultiplePermissions.launch(
+                    arrayOf(
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.READ_MEDIA_IMAGES,
+                        Manifest.permission.READ_MEDIA_VIDEO,
+                        Manifest.permission.READ_MEDIA_AUDIO
+                    )
+                )
+            }
+        }
+
+        binding.btnRequestPermissionDeprecated.setOnClickListener {
+            askNotificationPermission()
         }
     }
 
@@ -72,18 +95,31 @@ class IntentActivity : BaseActivity() {
         }
     }
 
-    private fun askNotificationPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(
-                    this@IntentActivity, android.Manifest.permission.POST_NOTIFICATIONS) !=
-                PackageManager.PERMISSION_GRANTED) {
-                // Ask permission for Post notification if it is not already granted
-                ActivityCompat.requestPermissions(this@IntentActivity,
-                    arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),
-                    REQUEST_CODE)
+    private val activityResultLauncherForPermission = registerForActivityResult(
+            ActivityResultContracts.RequestPermission()){ isGranted ->
+            if (isGranted) {
+                toast("Permission granted!")
+            } else {
+                toast("Permission denied!")
             }
         }
-    }
+
+
+    private val activityResultLauncherForMultiplePermissions =
+        registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions())
+        { permissions ->
+            // Handle Permission granted/rejected
+            permissions.entries.forEach {
+                val permissionName = it.key
+                val isGranted = it.value
+                if (isGranted) {
+                    toast("All permission granted!")
+                } else {
+                    toast("Permissions denied!")
+                }
+            }
+        }
 
     private fun launchNotification() {
         binding.btnNotification.setOnClickListener {
@@ -129,6 +165,33 @@ class IntentActivity : BaseActivity() {
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel)
             manager.notify(0, builder.build())
+        }
+    }
+
+
+    private fun askNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ActivityCompat.requestPermissions(this@IntentActivity,
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                REQUEST_CODE)
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            REQUEST_CODE -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    toast("Permission granted!")
+                } else {
+                    toast("Permission denied!")
+                }
+                return
+            }
         }
     }
 

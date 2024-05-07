@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews
+package com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.utils
 
 import androidx.recyclerview.widget.DiffUtil
 

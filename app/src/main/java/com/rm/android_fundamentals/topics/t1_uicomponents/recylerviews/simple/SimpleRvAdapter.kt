@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.rm.android_fundamentals.R
 import com.rm.android_fundamentals.databinding.RvItemLinearBinding
-import com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.RvDiffUtil
+import com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.utils.RvDiffUtil
 import com.rm.android_fundamentals.utils.toggleColor
 
 class SimpleRvAdapter(

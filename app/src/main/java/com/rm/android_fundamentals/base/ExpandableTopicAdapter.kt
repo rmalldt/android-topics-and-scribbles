@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t1_uicomponents.drawernavigation
+package com.rm.android_fundamentals.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

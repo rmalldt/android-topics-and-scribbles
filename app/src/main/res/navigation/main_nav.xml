@@ -6,7 +6,7 @@
     app:startDestination="@id/drawerMainFragment">
     <fragment
         android:id="@+id/drawerMainFragment"
-        android:name="com.rm.android_fundamentals.base.MainExpandableTopicFragment"
+        android:name="com.rm.android_fundamentals.base.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_main_expandable_topic" />
     <fragment
@@ -24,4 +24,9 @@
         android:name="com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.simple.SimpleRvFragment"
         android:label="Simple RecyclerView"
         tools:layout="@layout/fragment_simple_rv" />
+    <fragment
+        android:id="@+id/contentProviderFragment"
+        android:name="com.rm.android_fundamentals.topics.t7_storagetypes.contentprovider.ContentProviderFragment"
+        android:label="Content Provider Example"
+        tools:layout="@layout/fragment_content_provider" />
 </navigation>

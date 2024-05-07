@@ -10,7 +10,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rm.android_fundamentals.topics.t1_uicomponents.drawernavigation.ExpandableTopicAdapter
+import com.rm.android_fundamentals.base.ExpandableTopicAdapter
 import com.rm.android_fundamentals.base.model.NavDest
 import com.rm.android_fundamentals.databinding.ActivityMainBinding
 
