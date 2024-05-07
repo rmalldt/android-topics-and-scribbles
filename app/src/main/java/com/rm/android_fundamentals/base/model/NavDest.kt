@@ -3,6 +3,7 @@ package com.rm.android_fundamentals.base.model
 import com.rm.android_fundamentals.R
 import com.rm.android_fundamentals.base.model.NavConstants.S_COROUTINES
 import com.rm.android_fundamentals.base.model.NavConstants.S_COROUTINE_SCOPE
+import com.rm.android_fundamentals.base.model.NavConstants.S_DYNAMIC_RECYCLER_VIEW
 import com.rm.android_fundamentals.base.model.NavConstants.S_FRAGMENTS_PROGRAMMATICALLY
 import com.rm.android_fundamentals.base.model.NavConstants.S_FRAGMENT_XML
 import com.rm.android_fundamentals.base.model.NavConstants.S_INTENT_TYPES
@@ -12,7 +13,7 @@ import com.rm.android_fundamentals.base.model.NavConstants.S_LISTENER_WITHOUT_LI
 import com.rm.android_fundamentals.base.model.NavConstants.S_LIVEDATA
 import com.rm.android_fundamentals.base.model.NavConstants.S_MVC
 import com.rm.android_fundamentals.base.model.NavConstants.S_MVP
-import com.rm.android_fundamentals.base.model.NavConstants.S_RECYCLER_VIEWS
+import com.rm.android_fundamentals.base.model.NavConstants.S_RECYCLER_VIEW
 import com.rm.android_fundamentals.base.model.NavConstants.S_REGISTER_ACTIVITY_FOR_RESULT
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_INSTANCE_STATE
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_STATE_HANDLE
@@ -49,12 +50,14 @@ sealed class NavDest(
 ) {
 
     data object Layouts : NavDest(NavDrawerSection(S_LAYOUTS, R.id.layoutsFragment))
-    data object RecyclerViews : NavDest(NavDrawerSection(S_RECYCLER_VIEWS, R.id.simpleRvFragment))
+    data object RecyclerViews : NavDest(NavDrawerSection(S_RECYCLER_VIEW, R.id.simpleRvFragment))
+    data object DynamicRecyclerView : NavDest(NavDrawerSection(S_DYNAMIC_RECYCLER_VIEW, R.id.recyclerViewsFragment))
     data object UIComponents : NavDest(
         NavDrawerTopic(T_UI_COMPONENTS,
             listOf(
                 Layouts,
-                RecyclerViews
+                RecyclerViews,
+                DynamicRecyclerView
             )
         )
     )

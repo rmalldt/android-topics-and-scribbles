@@ -43,7 +43,6 @@ class SimpleRvFragmentTest {
 
     @Test
     fun test_RecyclerView_IsVisible_OnTheFragment() {
-        launchFragmentInContainer<SimpleRvFragment>().moveToState(Lifecycle.State.STARTED)
         onView(withId(R.id.rvSimple))
             .check(matches(isDisplayed()))
     }

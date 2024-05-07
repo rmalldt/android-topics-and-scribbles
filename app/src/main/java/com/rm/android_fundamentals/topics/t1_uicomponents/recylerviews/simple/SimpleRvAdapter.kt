@@ -6,7 +6,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.databinding.SimpleRvItemBinding
+import com.rm.android_fundamentals.databinding.RvItemLinearBinding
 import com.rm.android_fundamentals.topics.t1_uicomponents.recylerviews.RvDiffUtil
 import com.rm.android_fundamentals.utils.toggleColor
 
@@ -26,7 +26,7 @@ class SimpleRvAdapter(
         parent: ViewGroup,
         viewType: Int
     ): SimpleRvViewHolder {
-        val binding = SimpleRvItemBinding.inflate(
+        val binding = RvItemLinearBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -41,9 +41,9 @@ class SimpleRvAdapter(
 
     override fun getItemCount(): Int = dataList.size
 
-    class SimpleRvViewHolder(val binding: SimpleRvItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class SimpleRvViewHolder(val binding: RvItemLinearBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: SimpleRvItem, onRowItemClicked: (itemId: String) -> Unit) {
-            binding.txtRvItem.run {
+            binding.txtRvLinear.run {
                 text = item.id
 
                 setOnClickListener {
@@ -51,7 +51,7 @@ class SimpleRvAdapter(
                 }
             }
 
-            binding.btnSwitch.run {
+            binding.btnSwitchLinear.run {
                 // Check the state of current item before setting button text and color
                 if (item.switchState) {
                     setBackgroundColor(ContextCompat.getColor(context, R.color.colorAccent))

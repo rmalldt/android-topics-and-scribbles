@@ -55,7 +55,7 @@ class CustomExpandableAdapter(
         if (view == null) {
             view = LayoutInflater.from(parent?.context).inflate(R.layout.recyclerview_item, null)
         }
-        val topicTitle = view?.findViewById<TextView>(R.id.txtRvItem)
+        val topicTitle = view?.findViewById<TextView>(R.id.txtRvGrid)
         topicTitle?.text = topic.title
         return view!!
     }
@@ -73,7 +73,7 @@ class CustomExpandableAdapter(
         if (view == null) {
              view = LayoutInflater.from(parent?.context).inflate(R.layout.recyclerview_item, null)
         }
-        val topicTitle = view?.findViewById<TextView>(R.id.txtRvItem)
+        val topicTitle = view?.findViewById<TextView>(R.id.txtRvGrid)
         topicTitle?.text = (section.data as NavDrawerSection).title
         return view!!
     }

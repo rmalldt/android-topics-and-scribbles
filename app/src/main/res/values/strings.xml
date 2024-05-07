@@ -64,4 +64,6 @@
     <string name="constraint_layout_description">It is similar to RelativeLayout in that all views are laid out according to relative positions between sibling views and parent layout, additionally auto-calculates constraints to group elements by forming a chain that allows to arrange view without creating nested layouts.</string>
     <string name="on">ON</string>
     <string name="off">OFF</string>
+    <string name="layout_type">Layout Type</string>
+    <string name="grid_item">Grid Item: %1$s</string>
 </resources>

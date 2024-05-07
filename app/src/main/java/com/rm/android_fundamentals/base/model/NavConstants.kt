@@ -4,7 +4,8 @@ object NavConstants {
 
     const val T_UI_COMPONENTS = "UI components"
     const val S_LAYOUTS = "Layouts"
-    const val S_RECYCLER_VIEWS = "Recycler Views"
+    const val S_RECYCLER_VIEW = "Recycler Views"
+    const val S_DYNAMIC_RECYCLER_VIEW = "Dynamic RecyclerView"
 
     const val T_APP_ENTRY_POINTS = "App entry points"
     const val S_SAVED_INSTANCE_STATE = "Saved instance state"
