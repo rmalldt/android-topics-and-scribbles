@@ -29,4 +29,14 @@
         android:name="com.rm.android_fundamentals.topics.t7_storagetypes.contentprovider.ContentProviderFragment"
         android:label="Content Provider Example"
         tools:layout="@layout/fragment_content_provider" />
+    <fragment
+        android:id="@+id/broadcastReceiverFragment"
+        android:name="com.rm.android_fundamentals.topics.t8_broadcastreceivers.airplanemodereceiver.BroadcastReceiverFragment"
+        android:label="Broadcast Receiver example"
+        tools:layout="@layout/fragment_broadcast_receiver" />
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="com.rm.android_fundamentals.topics.t9_services.ServicesFragment"
+        android:label="Services"
+        tools:layout="@layout/fragment_services" />
 </navigation>

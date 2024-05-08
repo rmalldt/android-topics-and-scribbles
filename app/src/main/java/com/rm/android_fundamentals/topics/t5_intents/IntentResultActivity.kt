@@ -2,8 +2,8 @@ package com.rm.android_fundamentals.topics.t5_intents
 
 import android.content.Intent
 import android.os.Bundle
-import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.databinding.ActivityIntentResultBinding
+import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.utils.toast
 
 class IntentResultActivity : BaseActivity() {
@@ -15,23 +15,35 @@ class IntentResultActivity : BaseActivity() {
         binding = ActivityIntentResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (intent.extras != null) {
-            println("Called: ${intent.extras}")
-            receiveImplicitIntent()
-        }
+        receiveImplicitIntent()
 
-        getDataFromNotification()
+        receiveIntentFromNotification()
+
+        receiveSendIntentForImage()
     }
 
     private fun receiveImplicitIntent() {
-        val extras = intent.extras?.getString(Intent.EXTRA_TEXT)
-        this@IntentResultActivity.toast( "Message: $extras")
+        if (intent?.action == Intent.ACTION_SEND && intent?.type == "text/plain") {
+            intent.extras?.let {
+                val data = it.getString(Intent.EXTRA_TEXT)
+                val message = "Implicit intent from IntentActivity: $data"
+                binding.txtFromImplicitIntent.text = message
+            }
+        }
     }
 
-    private fun getDataFromNotification() {
-        val data = intent.getStringExtra(IntentActivity.DATA_KEY)
-        binding.txtNotification.text = data
+    private fun receiveIntentFromNotification() {
+        intent.extras?.let {
+            val data = it.getString("Notification")
+            val message = "Intent from Notification: $data"
+            binding.txtFromNotification.text = message
+        }
+    }
+
+    private fun receiveSendIntentForImage() {
+
     }
 
     override fun getTitleToolbar() = "Intent Result Activity"
+
 }

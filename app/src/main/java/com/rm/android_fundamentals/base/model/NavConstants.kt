@@ -27,6 +27,12 @@ object NavConstants {
     const val T_INTENTS = "Intents"
     const val S_INTENT_TYPES = "Intent types"
 
+    const val T_BROADCAST_RECEIVERS_EXAMPLE = "Broadcast receivers example"
+    const val S_BROADCAST_RECEIVER_AIRPLANE_MODE = "BroadcastReceiver Airplane mode"
+
+    const val T_SERVICES_EXAMPLE = "Services example"
+    const val S_SERVICES_EXAMPLE = "Services example"
+
     const val T_STORAGE = "Storage"
     const val S_CONTENT_PROVIDER = "Content Provider"
     const val S_STORAGE_TYPES = "Storage types"

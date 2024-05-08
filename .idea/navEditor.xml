@@ -8,6 +8,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="broadcastReceiverFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-817" />
+                            <option name="y" value="320" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="contentProviderFragment">
                     <value>
                       <LayoutPositions>
@@ -51,6 +63,18 @@
                           <Point>
                             <option name="x" value="-576" />
                             <option name="y" value="-380" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="servicesFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-565" />
+                            <option name="y" value="427" />
                           </Point>
                         </option>
                       </LayoutPositions>

@@ -4,39 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".topics.t7_storagetypes.contentprovider.ContentProviderFragment">
+    tools:context=".topics.t9_services.ServicesFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvContentProvider"
+
+    <Button
+        android:id="@+id/btnStartBackgroundService"
         android:layout_width="0dp"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:text="Start background service"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnFetchContacts"
+        android:id="@+id/btnStartRun"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Get Contacts"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Start foreground"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvContentProvider" />
+        app:layout_constraintTop_toBottomOf="@+id/btnStartBackgroundService" />
 
     <Button
-        android:id="@+id/btnFetchImages"
-        android:layout_width="0dp"
+        android:id="@+id/btnStopRun"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="Get Images"
+        android:text="Stop foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFetchContacts" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btnStartBackgroundService" />
 </androidx.constraintlayout.widget.ConstraintLayout>

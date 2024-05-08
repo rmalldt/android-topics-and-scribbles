@@ -11,14 +11,44 @@
         layout="@layout/toolbar" />
 
     <TextView
-        android:id="@+id/txtNotification"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtStartedWithExplicitIntent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="TextView"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:text="Started with explicit intent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/includeToolbar" />
+
+    <TextView
+        android:id="@+id/txtFromImplicitIntent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Implicit intent from IntentActivity"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtStartedWithExplicitIntent" />
+
+    <TextView
+        android:id="@+id/txtFromNotification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Intent from Notification"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFromImplicitIntent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

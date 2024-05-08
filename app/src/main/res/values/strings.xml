@@ -66,4 +66,6 @@
     <string name="off">OFF</string>
     <string name="layout_type">Layout Type</string>
     <string name="grid_item">Grid Item: %1$s</string>
+    <string name="isTrue">TRUE</string>
+    <string name="isFalse">FALSE</string>
 </resources>

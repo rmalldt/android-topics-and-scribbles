@@ -35,9 +35,9 @@ class CommonIntentsActivity : BaseActivity() {
         binding = ActivityCommonIntentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setAlarm()
-
         checkPermissions()
+
+        setAlarm()
 
         binding.btnStartCamera.setOnClickListener {
             dispatchTakePicture()
@@ -143,22 +143,34 @@ class CommonIntentsActivity : BaseActivity() {
         }
     }
 
-    private fun checkPermissions() {
-        val requiredPermissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            arrayOf(
-                Manifest.permission.CAMERA,
-                Manifest.permission.READ_MEDIA_IMAGES,
-                Manifest.permission.READ_MEDIA_VIDEO,
-                Manifest.permission.READ_MEDIA_AUDIO)
-        } else {
-            arrayOf(
-                Manifest.permission.CAMERA,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+    private val activityResultLauncherForMultiplePermissions =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+            // Handle Permission granted/rejected
+            permissions.entries.forEach {
+                val isGranted = it.value
+                if (isGranted) {
+                    toast("All permission granted!")
+                } else {
+                    toast("Permissions denied!")
+                }
+            }
         }
 
-        if (!hasPermission(this, *requiredPermissions)) {
-            ActivityCompat.requestPermissions(this, requiredPermissions, PERMISSION_CODE)
-        }
+
+    private fun checkPermissions() {
+        activityResultLauncherForMultiplePermissions.launch(
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                arrayOf(
+                    Manifest.permission.CAMERA,
+                    Manifest.permission.READ_MEDIA_IMAGES,
+                    Manifest.permission.READ_MEDIA_VIDEO,
+                    Manifest.permission.READ_MEDIA_AUDIO)
+            } else {
+                arrayOf(
+                    Manifest.permission.CAMERA,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            }
+        )
     }
 
     override fun getTitleToolbar(): String = "Common Intents Activity"

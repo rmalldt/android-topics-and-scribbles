@@ -4,6 +4,7 @@ import com.rm.android_fundamentals.R
 import com.rm.android_fundamentals.base.model.NavConstants.S_COROUTINES
 import com.rm.android_fundamentals.base.model.NavConstants.S_COROUTINE_SCOPE
 import com.rm.android_fundamentals.base.model.NavConstants.S_ADJUSTABLE_RECYCLER_VIEW
+import com.rm.android_fundamentals.base.model.NavConstants.S_BROADCAST_RECEIVER_AIRPLANE_MODE
 import com.rm.android_fundamentals.base.model.NavConstants.S_CONTENT_PROVIDER
 import com.rm.android_fundamentals.base.model.NavConstants.S_FRAGMENTS_PROGRAMMATICALLY
 import com.rm.android_fundamentals.base.model.NavConstants.S_FRAGMENT_XML
@@ -18,6 +19,7 @@ import com.rm.android_fundamentals.base.model.NavConstants.S_RECYCLER_VIEW
 import com.rm.android_fundamentals.base.model.NavConstants.S_REGISTER_ACTIVITY_FOR_RESULT
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_INSTANCE_STATE
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_STATE_HANDLE
+import com.rm.android_fundamentals.base.model.NavConstants.S_SERVICES_EXAMPLE
 import com.rm.android_fundamentals.base.model.NavConstants.S_STORAGE_TYPES
 import com.rm.android_fundamentals.base.model.NavConstants.S_VIEWMODEL_EXAMPLE
 import com.rm.android_fundamentals.base.model.NavConstants.S_VIEWPAGER
@@ -25,8 +27,10 @@ import com.rm.android_fundamentals.base.model.NavConstants.T_APP_ENTRY_POINTS
 import com.rm.android_fundamentals.base.model.NavConstants.T_APP_NAVIGATION
 import com.rm.android_fundamentals.base.model.NavConstants.T_ARCHITECTURE
 import com.rm.android_fundamentals.base.model.NavConstants.T_ARCHITECTURE_COMPONENTS
+import com.rm.android_fundamentals.base.model.NavConstants.T_BROADCAST_RECEIVERS_EXAMPLE
 import com.rm.android_fundamentals.base.model.NavConstants.T_COROUTINES
 import com.rm.android_fundamentals.base.model.NavConstants.T_INTENTS
+import com.rm.android_fundamentals.base.model.NavConstants.T_SERVICES_EXAMPLE
 import com.rm.android_fundamentals.base.model.NavConstants.T_STORAGE
 import com.rm.android_fundamentals.base.model.NavConstants.T_UI_COMPONENTS
 import com.rm.android_fundamentals.topics.t2_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity
@@ -130,6 +134,28 @@ sealed class NavDest(
         )
     )
 
+    data object BroadcastReceiverAirplaneMode : NavDest(NavDrawerSection(
+        S_BROADCAST_RECEIVER_AIRPLANE_MODE, R.id.broadcastReceiverFragment))
+    data object BroadcastReceiverExample : NavDest(
+        NavDrawerTopic(
+            T_BROADCAST_RECEIVERS_EXAMPLE,
+            listOf(
+                BroadcastReceiverAirplaneMode
+            )
+        )
+    )
+
+    data object ServicesExamples : NavDest(NavDrawerSection(
+        S_SERVICES_EXAMPLE, R.id.servicesFragment))
+    data object ServicesDemo : NavDest(
+        NavDrawerTopic(
+            T_SERVICES_EXAMPLE,
+            listOf(
+                ServicesExamples
+            )
+        )
+    )
+
     data object ContentProviderExample : NavDest(NavDrawerSection(S_CONTENT_PROVIDER, R.id.contentProviderFragment))
     data object StorageTypes : NavDest(NavDrawerSection(S_STORAGE_TYPES, targetActivity = StorageTypesActivity::class.java))
     data object Storages : NavDest(
@@ -141,6 +167,9 @@ sealed class NavDest(
             )
         )
     )
+
+
+
 
     data object CoroutinesAndFlow : NavDest(NavDrawerSection(S_COROUTINES, targetActivity = CoroutinesActivity::class.java))
     data object CoroutinesExample : NavDest(
@@ -172,6 +201,8 @@ sealed class NavDest(
             AppNavigation,
             ArchitectureComponents,
             IntentExample,
+            BroadcastReceiverExample,
+            ServicesDemo,
             Storages,
             CoroutinesExample,
             ArchitectureTypes
