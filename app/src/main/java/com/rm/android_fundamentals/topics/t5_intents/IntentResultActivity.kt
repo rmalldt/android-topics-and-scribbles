@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import com.rm.android_fundamentals.databinding.ActivityIntentResultBinding
 import com.rm.android_fundamentals.legacy.BaseActivity
-import com.rm.android_fundamentals.utils.toast
 
 class IntentResultActivity : BaseActivity() {
 

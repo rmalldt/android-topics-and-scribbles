@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".topics.t8_coroutinesflow.usecases.flow.usecase1.FlowUseCase1Activity">
+    tools:context=".topics.t9_coroutinesflow.usecases.flow.usecase1.FlowUseCase1Activity">
 
     <include
         android:id="@+id/includeToolbar"

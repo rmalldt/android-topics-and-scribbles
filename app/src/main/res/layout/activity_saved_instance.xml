@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".topics.t2_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity">
+    tools:context=".topics.t3_architecturecomponents.s1_savedinstancestate.SavedInstanceStateActivity">
 
     <include
         android:id="@+id/includeToolbar"

@@ -62,71 +62,71 @@
         </activity>
 
         <activity
-            android:name=".topics.t9_architectures.mvp.MVPActivity"
+            android:name=".topics.t10_architectures.mvp.MVPActivity"
             android:exported="false"
             android:theme="@style/Theme.Androidfundamentals" />
         <activity
-            android:name=".topics.t9_architectures.mvc.MVCActivity"
+            android:name=".topics.t10_architectures.mvc.MVCActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t3_architecturecomponents.s2_viewmodels.ex2.SavedStateHandleActivity"
+            android:name=".topics.t3_architecturecomponents.s5_viewmodels.ex2.SavedStateHandleActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.flow.usecase2.FlowUseCase2Activity"
+            android:name=".topics.t9_coroutinesflow.usecases.flow.usecase2.FlowUseCase2Activity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.flow.usecase1.FlowUseCase1Activity"
+            android:name=".topics.t9_coroutinesflow.usecases.flow.usecase1.FlowUseCase1Activity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase7.CalculationInBackgroundActivity"
+            android:name=".topics.t9_coroutinesflow.usecases.coroutines.usecase7.CalculationInBackgroundActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase6.RoomAndCoroutineActivity"
+            android:name=".topics.t9_coroutinesflow.usecases.coroutines.usecase6.RoomAndCoroutineActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase5.TimeoutWithRetriesActivity"
+            android:name=".topics.t9_coroutinesflow.usecases.coroutines.usecase5.TimeoutWithRetriesActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase4.TimeoutAndRetryActivity"
+            android:name=".topics.t9_coroutinesflow.usecases.coroutines.usecase4.TimeoutAndRetryActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase3.PerformConcurrentNetworkRequestsActivity"
+            android:name=".topics.t9_coroutinesflow.usecases.coroutines.usecase3.PerformConcurrentNetworkRequestsActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase2.SequentialNetworkRequestsActivity"
+            android:name=".topics.t9_coroutinesflow.usecases.coroutines.usecase2.SequentialNetworkRequestsActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase2.rx.SequentialNetworkRequestsRxActivity"
+            android:name=".topics.t9_coroutinesflow.usecases.coroutines.usecase2.rx.SequentialNetworkRequestsRxActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase2.callbacks.SequentialNetworkRequestsCallbacksActivity"
+            android:name=".topics.t9_coroutinesflow.usecases.coroutines.usecase2.callbacks.SequentialNetworkRequestsCallbacksActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.usecases.coroutines.usecase1.PerformSingleNetworkRequestActivity"
+            android:name=".topics.t9_coroutinesflow.usecases.coroutines.usecase1.PerformSingleNetworkRequestActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.base.CoroutineUseCaseActivity"
+            android:name=".topics.t9_coroutinesflow.base.CoroutineUseCaseActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t3_architecturecomponents.s4_coroutinescopes.CoroutineScopesActivity"
+            android:name=".topics.t3_architecturecomponents.s6_coroutinescopes.CoroutineScopesActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t8_coroutinesflow.CoroutinesActivity"
+            android:name=".topics.t9_coroutinesflow.CoroutinesActivity"
             android:exported="false" />
         <activity
             android:name=".topics.t4_appcomponents.AppComponentsActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t3_architecturecomponents.s3_livedata.NameActivity"
+            android:name=".topics.t3_architecturecomponents.s4_livedata.NameActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t3_architecturecomponents.s2_viewmodels.ex1.DiceRollActivity"
+            android:name=".topics.t3_architecturecomponents.s5_viewmodels.ex1.DiceRollActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t3_architecturecomponents.s1_lifecycle.withoutlifecyclecomponent.WithoutLifeCycleComponentActivity"
+            android:name=".topics.t3_architecturecomponents.s3_lifecycle.withoutlifecyclecomponent.WithoutLifeCycleComponentActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t3_architecturecomponents.s1_lifecycle.withlifecyclecomponent.LifecycleActivity"
+            android:name=".topics.t3_architecturecomponents.s3_lifecycle.withlifecyclecomponent.LifecycleActivity"
             android:exported="false" />
         <activity
             android:name=".topics.t2_appnavigation.s1_fragments.fragmentprogrammatic.FragmentHostManualActivity"
@@ -141,7 +141,7 @@
             android:name=".topics.t5_intents.RedirectionIntentsActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t7_storagetypes.storagetypes.StorageTypesActivity"
+            android:name=".topics.t8_storagetypes.storagetypes.StorageTypesActivity"
             android:exported="false" />
         <activity
             android:name=".topics.t5_intents.CommonIntentsActivity"
@@ -164,18 +164,18 @@
             android:name=".topics.t5_intents.IntentActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t2_appentrypoints.s2_passdatabetweenactivities.ResultProducingActivity"
+            android:name=".topics.t3_architecturecomponents.s2_passdatabetweenactivities.ResultProducingActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t2_appentrypoints.s2_passdatabetweenactivities.ResultActivity"
+            android:name=".topics.t3_architecturecomponents.s2_passdatabetweenactivities.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t2_appentrypoints.s1_savedinstancestate.SavedInstanceStateActivity"
+            android:name=".topics.t3_architecturecomponents.s1_savedinstancestate.SavedInstanceStateActivity"
             android:exported="false" />
 
-        <service android:name=".topics.t9_services.background.MBackgroundService" />
+        <service android:name=".topics.t6_services.background.MBackgroundService" />
 
-        <service android:name=".topics.t9_services.foreground.MForegroundService"
+        <service android:name=".topics.t6_services.foreground.MForegroundService"
             android:foregroundServiceType="shortService" />
 
         <provider

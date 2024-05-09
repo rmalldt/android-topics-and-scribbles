@@ -1,10 +1,9 @@
 package com.rm.android_fundamentals
 
 import android.app.Application
-import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase6.AndroidVersionDatabase
-import com.rm.android_fundamentals.topics.t8_coroutinesflow.usecases.coroutines.usecase6.RoomAndCoroutineRepository
+import com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.coroutines.usecase6.AndroidVersionDatabase
+import com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.coroutines.usecase6.RoomAndCoroutineRepository
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import timber.log.Timber
 

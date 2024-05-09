@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".topics.t8_broadcastreceivers.airplanemodereceiver.BroadcastReceiverFragment">
+    tools:context=".topics.t7_broadcastreceivers.airplanemodereceiver.BroadcastReceiverFragment">
 
     <TextView
         android:id="@+id/txtBroadcastReceiverAirplaneMode"
