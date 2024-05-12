@@ -1,8 +1,8 @@
 package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.coroutines.usecase2.callbacks
 
 import com.rm.android_fundamentals.topics.t9_coroutinesflow.base.BaseViewModel
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.AndroidVersion
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.VersionFeatures
+import com.rm.android_fundamentals.mocknetwork.mock.AndroidVersion
+import com.rm.android_fundamentals.mocknetwork.mock.VersionFeatures
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

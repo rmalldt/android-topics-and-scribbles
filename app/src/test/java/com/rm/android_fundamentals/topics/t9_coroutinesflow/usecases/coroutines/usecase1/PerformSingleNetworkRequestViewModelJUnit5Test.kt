@@ -1,7 +1,7 @@
 package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.coroutines.usecase1
 
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.MockApi
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.mockAndroidVersions
+import com.rm.android_fundamentals.mocknetwork.mock.MockApi
+import com.rm.android_fundamentals.mocknetwork.mock.mockAndroidVersions
 import com.rm.android_fundamentals.extensions.InstantExecutorExtension
 import com.rm.android_fundamentals.extensions.MainDispatcherExtension
 import io.mockk.coEvery

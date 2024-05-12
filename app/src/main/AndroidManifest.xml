@@ -114,9 +114,6 @@
             android:name=".topics.t9_coroutinesflow.CoroutinesActivity"
             android:exported="false" />
         <activity
-            android:name=".topics.t4_appcomponents.AppComponentsActivity"
-            android:exported="false" />
-        <activity
             android:name=".topics.t3_architecturecomponents.s4_livedata.NameActivity"
             android:exported="false" />
         <activity
@@ -177,6 +174,12 @@
 
         <service android:name=".topics.t6_services.foreground.MForegroundService"
             android:foregroundServiceType="shortService" />
+
+        <service android:name=".topics.t6_services.bound.simple.MBoundService" />
+
+        <service android:name=".topics.t6_services.bound.flow.UpdateService" />
+
+        <service android:name=".topics.t6_services.bound.apicall.FetchService" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

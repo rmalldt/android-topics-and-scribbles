@@ -4,6 +4,7 @@ import com.rm.android_fundamentals.R
 import com.rm.android_fundamentals.base.model.NavConstants.S_COROUTINES
 import com.rm.android_fundamentals.base.model.NavConstants.S_COROUTINE_SCOPE
 import com.rm.android_fundamentals.base.model.NavConstants.S_ADJUSTABLE_RECYCLER_VIEW
+import com.rm.android_fundamentals.base.model.NavConstants.S_API_BOUND_SERVICE
 import com.rm.android_fundamentals.base.model.NavConstants.S_BROADCAST_RECEIVER_AIRPLANE_MODE
 import com.rm.android_fundamentals.base.model.NavConstants.S_CONTENT_PROVIDER
 import com.rm.android_fundamentals.base.model.NavConstants.S_FRAGMENTS_PROGRAMMATICALLY
@@ -19,7 +20,9 @@ import com.rm.android_fundamentals.base.model.NavConstants.S_RECYCLER_VIEW
 import com.rm.android_fundamentals.base.model.NavConstants.S_REGISTER_ACTIVITY_FOR_RESULT
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_INSTANCE_STATE
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_STATE_HANDLE
-import com.rm.android_fundamentals.base.model.NavConstants.S_SERVICES_EXAMPLE
+import com.rm.android_fundamentals.base.model.NavConstants.S_BACKGROUND_AND_FOREGROUND_SERVICES
+import com.rm.android_fundamentals.base.model.NavConstants.S_FLOW_BOUND_SERVICE
+import com.rm.android_fundamentals.base.model.NavConstants.S_SIMPLE_BOUND_SERVICE
 import com.rm.android_fundamentals.base.model.NavConstants.S_STORAGE_TYPES
 import com.rm.android_fundamentals.base.model.NavConstants.S_VIEWMODEL_EXAMPLE
 import com.rm.android_fundamentals.base.model.NavConstants.S_VIEWPAGER
@@ -134,6 +137,22 @@ sealed class NavDest(
         )
     )
 
+    data object BackgroundAndForegroundServices : NavDest(NavDrawerSection(S_BACKGROUND_AND_FOREGROUND_SERVICES, R.id.servicesFragment))
+    data object SimpleBoundService : NavDest(NavDrawerSection(S_SIMPLE_BOUND_SERVICE, R.id.simpleBoundServiceFragment))
+    data object FlowBoundService : NavDest(NavDrawerSection(S_FLOW_BOUND_SERVICE, R.id.flowBoundServiceFragment))
+    data object ApiBoundService : NavDest(NavDrawerSection(S_API_BOUND_SERVICE, R.id.boundServiceFragment))
+    data object ServicesExamples : NavDest(
+        NavDrawerTopic(
+            T_SERVICES_EXAMPLE,
+            listOf(
+                BackgroundAndForegroundServices,
+                SimpleBoundService,
+                FlowBoundService,
+                ApiBoundService
+            )
+        )
+    )
+
     data object BroadcastReceiverAirplaneMode : NavDest(NavDrawerSection(
         S_BROADCAST_RECEIVER_AIRPLANE_MODE, R.id.broadcastReceiverFragment))
     data object BroadcastReceiverExample : NavDest(
@@ -141,17 +160,6 @@ sealed class NavDest(
             T_BROADCAST_RECEIVERS_EXAMPLE,
             listOf(
                 BroadcastReceiverAirplaneMode
-            )
-        )
-    )
-
-    data object ServicesExamples : NavDest(NavDrawerSection(
-        S_SERVICES_EXAMPLE, R.id.servicesFragment))
-    data object ServicesDemo : NavDest(
-        NavDrawerTopic(
-            T_SERVICES_EXAMPLE,
-            listOf(
-                ServicesExamples
             )
         )
     )
@@ -167,8 +175,6 @@ sealed class NavDest(
             )
         )
     )
-
-
 
 
     data object CoroutinesAndFlow : NavDest(NavDrawerSection(S_COROUTINES, targetActivity = CoroutinesActivity::class.java))
@@ -188,8 +194,7 @@ sealed class NavDest(
             T_ARCHITECTURE,
             listOf(
                 ArchitectureMVC,
-                ArchitectureMVP,
-                CoroutinesExample
+                ArchitectureMVP
             )
         )
     )
@@ -201,8 +206,8 @@ sealed class NavDest(
             AppNavigation,
             ArchitectureComponents,
             IntentExample,
+            ServicesExamples,
             BroadcastReceiverExample,
-            ServicesDemo,
             Storages,
             CoroutinesExample,
             ArchitectureTypes

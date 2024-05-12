@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t9_coroutinesflow.utils
+package com.rm.android_fundamentals.mocknetwork.utils
 
 import okhttp3.Interceptor
 import okhttp3.MediaType

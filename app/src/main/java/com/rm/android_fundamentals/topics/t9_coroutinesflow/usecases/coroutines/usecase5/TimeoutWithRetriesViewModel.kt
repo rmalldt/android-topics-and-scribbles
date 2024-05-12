@@ -2,8 +2,8 @@ package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.coroutines
 
 import androidx.lifecycle.viewModelScope
 import com.rm.android_fundamentals.topics.t9_coroutinesflow.base.BaseViewModel
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.AndroidVersion
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.MockApi
+import com.rm.android_fundamentals.mocknetwork.mock.AndroidVersion
+import com.rm.android_fundamentals.mocknetwork.mock.MockApi
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

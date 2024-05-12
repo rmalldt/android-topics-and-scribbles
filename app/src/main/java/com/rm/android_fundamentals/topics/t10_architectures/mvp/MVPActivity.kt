@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.rm.android_fundamentals.legacy.BaseActivity
 import com.rm.android_fundamentals.legacy.mvpSubTopic2
 import com.rm.android_fundamentals.databinding.ActivityMvpactivityBinding
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.AndroidVersion
+import com.rm.android_fundamentals.mocknetwork.mock.AndroidVersion
 import com.rm.android_fundamentals.topics.t10_architectures.common.VersionUiState
 import com.rm.android_fundamentals.utils.EMPTY_STRING
 import com.rm.android_fundamentals.utils.fromHtml

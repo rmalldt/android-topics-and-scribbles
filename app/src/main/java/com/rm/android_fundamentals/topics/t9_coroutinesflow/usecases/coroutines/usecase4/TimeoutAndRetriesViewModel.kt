@@ -2,7 +2,7 @@ package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.coroutines
 
 import androidx.lifecycle.viewModelScope
 import com.rm.android_fundamentals.topics.t9_coroutinesflow.base.BaseViewModel
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.MockApi
+import com.rm.android_fundamentals.mocknetwork.mock.MockApi
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

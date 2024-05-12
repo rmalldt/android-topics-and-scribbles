@@ -88,7 +88,6 @@ class FlowUseCase2Activity : BaseActivity() {
         binding.rv.apply {
             adapter = stockListAdapter
             layoutManager = LinearLayoutManager(this@FlowUseCase2Activity)
-            //addItemDecoration(initItemDecorator(this@FlowUseCase2Activity))
         }
     }
 

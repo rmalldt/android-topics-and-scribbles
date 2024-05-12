@@ -8,13 +8,25 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="boundServiceFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-605" />
+                            <option name="y" value="333" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="broadcastReceiverFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-817" />
-                            <option name="y" value="320" />
+                            <option name="x" value="-362" />
+                            <option name="y" value="305" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -25,8 +37,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-496" />
-                            <option name="y" value="14" />
+                            <option name="x" value="-130" />
+                            <option name="y" value="312" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -39,6 +51,18 @@
                           <Point>
                             <option name="x" value="-884" />
                             <option name="y" value="-391" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="flowBoundServiceFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-888" />
+                            <option name="y" value="366" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -73,8 +97,20 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-565" />
-                            <option name="y" value="427" />
+                            <option name="x" value="-1387" />
+                            <option name="y" value="349" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="simpleBoundServiceFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-1119" />
+                            <option name="y" value="337" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -85,8 +121,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-689" />
-                            <option name="y" value="12" />
+                            <option name="x" value="-291" />
+                            <option name="y" value="-375" />
                           </Point>
                         </option>
                       </LayoutPositions>

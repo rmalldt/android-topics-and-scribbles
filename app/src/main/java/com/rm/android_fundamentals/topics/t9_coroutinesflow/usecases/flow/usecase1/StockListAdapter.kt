@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rm.android_fundamentals.databinding.RecyclerviewStockItemBinding
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.flow.mock.Stock
+import com.rm.android_fundamentals.mocknetwork.mockflow.Stock
 import java.text.NumberFormat
 
 class StockListAdapter : RecyclerView.Adapter<StockListAdapter.ViewHolder>() {

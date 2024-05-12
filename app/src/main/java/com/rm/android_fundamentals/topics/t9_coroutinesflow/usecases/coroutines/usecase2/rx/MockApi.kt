@@ -1,11 +1,11 @@
 package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.coroutines.usecase2.rx
 
 import com.google.gson.Gson
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.AndroidVersion
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.VersionFeatures
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.mockAndroidVersions
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.mockVersionFeaturesAndroid10
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.utils.MockNetworkInterceptor
+import com.rm.android_fundamentals.mocknetwork.mock.AndroidVersion
+import com.rm.android_fundamentals.mocknetwork.mock.VersionFeatures
+import com.rm.android_fundamentals.mocknetwork.mock.mockAndroidVersions
+import com.rm.android_fundamentals.mocknetwork.mock.mockVersionFeaturesAndroid10
+import com.rm.android_fundamentals.mocknetwork.utils.MockNetworkInterceptor
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient

@@ -13,7 +13,6 @@ import com.rm.android_fundamentals.topics.t3_architecturecomponents.s5_viewmodel
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s5_viewmodels.ex2.SavedStateHandleActivity
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s4_livedata.NameActivity
 import com.rm.android_fundamentals.topics.t3_architecturecomponents.s6_coroutinescopes.CoroutineScopesActivity
-import com.rm.android_fundamentals.topics.t4_appcomponents.AppComponentsActivity
 import com.rm.android_fundamentals.topics.t5_intents.IntentActivity
 import com.rm.android_fundamentals.topics.t8_storagetypes.storagetypes.StorageTypesActivity
 import com.rm.android_fundamentals.topics.t9_coroutinesflow.CoroutinesActivity
@@ -73,14 +72,6 @@ val architectureComponents = Chapter(
     )
 )
 
-const val appComponentSubTopic1 = "1. App component"
-val appComponents = Chapter(
-    "4. App components",
-    listOf(
-        SubTopic(appComponentSubTopic1, AppComponentsActivity::class.java )
-    )
-)
-
 const val intentSubTopic1 = "1. Intent"
 val intents = Chapter(
     "5. Intents",
@@ -126,7 +117,6 @@ val topics = listOf(
     appEntryPoints,
     appNavigation,
     architectureComponents,
-    appComponents,
     intents,
     viewLayouts,
     storageTypes,

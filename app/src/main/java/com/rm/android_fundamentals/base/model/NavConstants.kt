@@ -27,11 +27,15 @@ object NavConstants {
     const val T_INTENTS = "Intents"
     const val S_INTENT_TYPES = "Intent types"
 
+    const val T_SERVICES_EXAMPLE = "Services example"
+    const val S_BACKGROUND_AND_FOREGROUND_SERVICES = "Background and ForeGround services"
+    const val S_SIMPLE_BOUND_SERVICE = "Simple bound service"
+    const val S_FLOW_BOUND_SERVICE = "Flow bound service"
+    const val S_API_BOUND_SERVICE = "Api bound service"
+
     const val T_BROADCAST_RECEIVERS_EXAMPLE = "Broadcast receivers example"
     const val S_BROADCAST_RECEIVER_AIRPLANE_MODE = "BroadcastReceiver Airplane mode"
 
-    const val T_SERVICES_EXAMPLE = "Services example"
-    const val S_SERVICES_EXAMPLE = "Services example"
 
     const val T_STORAGE = "Storage"
     const val S_CONTENT_PROVIDER = "Content Provider"

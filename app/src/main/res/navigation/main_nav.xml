@@ -39,4 +39,19 @@
         android:name="com.rm.android_fundamentals.topics.t6_services.ServicesFragment"
         android:label="Services"
         tools:layout="@layout/fragment_services" />
+    <fragment
+        android:id="@+id/simpleBoundServiceFragment"
+        android:name="com.rm.android_fundamentals.topics.t6_services.bound.simple.SimpleBoundServiceFragment"
+        android:label="Simple bound service"
+        tools:layout="@layout/fragment_simple_bound_service" />
+    <fragment
+        android:id="@+id/flowBoundServiceFragment"
+        android:name="com.rm.android_fundamentals.topics.t6_services.bound.flow.FlowBoundServiceFragment"
+        android:label="Flow bound service"
+        tools:layout="@layout/fragment_flow_bound_service" />
+    <fragment
+        android:id="@+id/boundServiceFragment"
+        android:name="com.rm.android_fundamentals.topics.t6_services.bound.apicall.BoundServiceFragment"
+        android:label="Bound service"
+        tools:layout="@layout/fragment_bound_service" />
 </navigation>

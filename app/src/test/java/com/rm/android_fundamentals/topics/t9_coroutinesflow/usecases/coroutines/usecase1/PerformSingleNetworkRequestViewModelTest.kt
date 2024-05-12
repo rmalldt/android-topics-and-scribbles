@@ -1,7 +1,7 @@
 package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.coroutines.usecase1
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.MockApi
+import com.rm.android_fundamentals.mocknetwork.mock.MockApi
 import com.rm.android_fundamentals.utils.MainDispatcherRule
 import io.mockk.mockk
 import org.junit.Before

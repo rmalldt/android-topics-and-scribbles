@@ -1,6 +1,6 @@
-package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.flow.mock
+package com.rm.android_fundamentals.mocknetwork.mockflow
 
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.utils.MockNetworkInterceptor
+import com.rm.android_fundamentals.mocknetwork.utils.MockNetworkInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

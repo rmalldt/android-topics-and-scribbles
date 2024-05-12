@@ -1,7 +1,7 @@
 package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.coroutines.usecase6
 
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.AndroidVersion
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.MockApi
+import com.rm.android_fundamentals.mocknetwork.mock.AndroidVersion
+import com.rm.android_fundamentals.mocknetwork.mock.MockApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch

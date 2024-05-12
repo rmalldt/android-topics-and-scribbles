@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t9_coroutinesflow.mock
+package com.rm.android_fundamentals.mocknetwork.mock
 
 /**
  * Objects defined in this file mock the payload received from mock API service.

@@ -9,7 +9,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.rm.android_fundamentals.R
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.mockAndroidVersions
+import com.rm.android_fundamentals.mocknetwork.mock.mockAndroidVersions
 import com.rm.android_fundamentals.utils.EspressoIdlingResource
 import com.rm.android_fundamentals.utils.fromHtml
 import org.junit.After

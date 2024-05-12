@@ -1,7 +1,7 @@
 package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.flow.usecase2
 
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.flow.mock.FlowMockApi
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.flow.mock.Stock
+import com.rm.android_fundamentals.mocknetwork.mockflow.FlowMockApi
+import com.rm.android_fundamentals.mocknetwork.mockflow.Stock
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow

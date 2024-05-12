@@ -1,8 +1,8 @@
 package com.rm.android_fundamentals.utils
 
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.AndroidVersion
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.MockApi
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.mock.VersionFeatures
+import com.rm.android_fundamentals.mocknetwork.mock.AndroidVersion
+import com.rm.android_fundamentals.mocknetwork.mock.MockApi
+import com.rm.android_fundamentals.mocknetwork.mock.VersionFeatures
 import okhttp3.MediaType
 import okhttp3.ResponseBody
 import retrofit2.HttpException

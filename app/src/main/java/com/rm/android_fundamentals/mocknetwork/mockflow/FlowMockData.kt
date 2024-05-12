@@ -1,4 +1,4 @@
-package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.flow.mock
+package com.rm.android_fundamentals.mocknetwork.mockflow
 
 import android.content.Context
 import com.opencsv.CSVReader
@@ -44,22 +44,21 @@ fun mockCurrentStockPrices(context: Context): List<Stock> {
 
 fun readAndParseStockData(context: Context) {
     if (initialStockData == null) {
-        val stream = context.assets.open("stockdata.csv")
-        val csvReader = CSVReader(InputStreamReader(stream))
-        val stockData = csvReader
-            .readAll()
-            .drop(1)// drop file header
-            .mapNotNull { line ->
-                val rank = line[0].toInt()
-                val name = line[1]
-                val symbol = line[2]
-                val marketCap = line[3].toFloat()
-                val priceUsd = line[4].toFloat()
-                val country = line[5]
-                Stock(rank, name, symbol, marketCap, priceUsd, country)
-            }.also {
-                csvReader.close()
-            }
+        val file = context.assets.open("stockdata.csv")
+        val csvReader = CSVReader(InputStreamReader(file))
+        val stockData: List<Stock> = csvReader.use { reader ->
+            reader.readAll()
+                .drop(1)
+                .mapNotNull { line ->
+                    val rank = line[0].toInt()
+                    val name = line[1]
+                    val symbol = line[2]
+                    val marketCap = line[3].toFloat()
+                    val priceUsd = line[4].toFloat()
+                    val country = line[5]
+                    Stock(rank, name, symbol, marketCap, priceUsd, country)
+                }
+        }
         initialStockData = stockData
     }
 }

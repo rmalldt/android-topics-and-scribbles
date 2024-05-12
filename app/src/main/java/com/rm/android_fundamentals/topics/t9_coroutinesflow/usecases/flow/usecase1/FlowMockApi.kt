@@ -2,9 +2,9 @@ package com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.flow.useca
 
 import android.content.Context
 import com.google.gson.Gson
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.flow.mock.createFlowMockApi
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.usecases.flow.mock.mockCurrentStockPrices
-import com.rm.android_fundamentals.topics.t9_coroutinesflow.utils.MockNetworkInterceptor
+import com.rm.android_fundamentals.mocknetwork.mockflow.createFlowMockApi
+import com.rm.android_fundamentals.mocknetwork.mockflow.mockCurrentStockPrices
+import com.rm.android_fundamentals.mocknetwork.utils.MockNetworkInterceptor
 
 fun flowMockApi(context: Context) =
     createFlowMockApi(

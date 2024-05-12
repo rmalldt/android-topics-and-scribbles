@@ -3,22 +3,27 @@ package com.rm.android_fundamentals.topics.t6_services.background
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
+import com.rm.android_fundamentals.utils.toast
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class MBackgroundService : Service() {
 
-    val scope = CoroutineScope(SupervisorJob())
+    val job = SupervisorJob()
+    val scope = CoroutineScope(job + Dispatchers.IO)
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        toast("starting background service with id: $startId")
         scope.launch {
             repeat(10) {
-                println("Background service running...$it")
                 delay(1000)
+                Timber.d("background service started: $it")
             }
+            stopSelf(startId)
         }
         return super.onStartCommand(intent, flags, startId)
     }
@@ -28,7 +33,7 @@ class MBackgroundService : Service() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
-        scope.cancel()
+        toast("background service done")
+        job.cancel()
     }
 }
