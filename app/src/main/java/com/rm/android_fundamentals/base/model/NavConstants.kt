@@ -36,7 +36,6 @@ object NavConstants {
     const val T_BROADCAST_RECEIVERS_EXAMPLE = "Broadcast receivers example"
     const val S_BROADCAST_RECEIVER_AIRPLANE_MODE = "BroadcastReceiver Airplane mode"
 
-
     const val T_STORAGE = "Storage"
     const val S_CONTENT_PROVIDER = "Content Provider"
     const val S_STORAGE_TYPES = "Storage types"
@@ -48,4 +47,7 @@ object NavConstants {
     const val T_ARCHITECTURE = "Architecture"
     const val S_MVC = "MVC"
     const val S_MVP = "MVP"
+
+    const val T_KEYSTORE = "Keystore"
+    const val S_ENCRYPTION_DECRYPTION = "Encryption and Decryption"
 }

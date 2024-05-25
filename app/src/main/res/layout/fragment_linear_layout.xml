@@ -79,7 +79,7 @@
             android:text="gravity: end|center_vertical, layout_weight: 1"
             android:textSize="@dimen/txtSmall" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLinear"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen0dp"
@@ -87,8 +87,8 @@
             android:layout_marginVertical="@dimen/dimen4dp"
             android:padding="@dimen/dimen4dp"
             android:layout_weight="1.5"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:text="layout_weight:1.5" />
+            android:text="layout_weight:1.5"
+            android:background="@drawable/gradient_green" />
 
     </LinearLayout>
 

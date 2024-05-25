@@ -21,6 +21,7 @@ import com.rm.android_fundamentals.base.model.NavConstants.S_REGISTER_ACTIVITY_F
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_INSTANCE_STATE
 import com.rm.android_fundamentals.base.model.NavConstants.S_SAVED_STATE_HANDLE
 import com.rm.android_fundamentals.base.model.NavConstants.S_BACKGROUND_AND_FOREGROUND_SERVICES
+import com.rm.android_fundamentals.base.model.NavConstants.S_ENCRYPTION_DECRYPTION
 import com.rm.android_fundamentals.base.model.NavConstants.S_FLOW_BOUND_SERVICE
 import com.rm.android_fundamentals.base.model.NavConstants.S_SIMPLE_BOUND_SERVICE
 import com.rm.android_fundamentals.base.model.NavConstants.S_STORAGE_TYPES
@@ -32,6 +33,7 @@ import com.rm.android_fundamentals.base.model.NavConstants.T_ARCHITECTURE
 import com.rm.android_fundamentals.base.model.NavConstants.T_ARCHITECTURE_COMPONENTS
 import com.rm.android_fundamentals.base.model.NavConstants.T_BROADCAST_RECEIVERS_EXAMPLE
 import com.rm.android_fundamentals.base.model.NavConstants.T_COROUTINES
+import com.rm.android_fundamentals.base.model.NavConstants.T_KEYSTORE
 import com.rm.android_fundamentals.base.model.NavConstants.T_INTENTS
 import com.rm.android_fundamentals.base.model.NavConstants.T_SERVICES_EXAMPLE
 import com.rm.android_fundamentals.base.model.NavConstants.T_STORAGE
@@ -199,6 +201,16 @@ sealed class NavDest(
         )
     )
 
+    data object EncryptionDecryption : NavDest(NavDrawerSection(S_ENCRYPTION_DECRYPTION, R.id.cryptographicFragment))
+    data object Crypto : NavDest(
+        NavDrawerTopic(
+            T_KEYSTORE,
+            listOf(
+                EncryptionDecryption
+            )
+        )
+    )
+
     companion object {
         val drawerTopicList = listOf(
             UIComponents,
@@ -210,7 +222,8 @@ sealed class NavDest(
             BroadcastReceiverExample,
             Storages,
             CoroutinesExample,
-            ArchitectureTypes
+            ArchitectureTypes,
+            Crypto
         )
     }
 }
