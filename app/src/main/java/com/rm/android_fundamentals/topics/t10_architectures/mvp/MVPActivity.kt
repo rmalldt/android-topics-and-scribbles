@@ -2,7 +2,6 @@ package com.rm.android_fundamentals.topics.t10_architectures.mvp
 
 import android.os.Bundle
 import com.rm.android_fundamentals.legacy.BaseActivity
-import com.rm.android_fundamentals.legacy.mvpSubTopic2
 import com.rm.android_fundamentals.databinding.ActivityMvpactivityBinding
 import com.rm.android_fundamentals.mocknetwork.mock.AndroidVersion
 import com.rm.android_fundamentals.topics.t10_architectures.common.VersionUiState
@@ -62,7 +61,7 @@ class MVPActivity : BaseActivity(), MainContract.View {
         this.presenter = presenter
     }
 
-    override fun getTitleToolbar(): String = mvpSubTopic2
+    override fun getTitleToolbar(): String = "MVP"
 
     override fun onPause() {
         super.onPause()

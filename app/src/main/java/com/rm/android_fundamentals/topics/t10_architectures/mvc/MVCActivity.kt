@@ -2,7 +2,6 @@ package com.rm.android_fundamentals.topics.t10_architectures.mvc
 
 import android.os.Bundle
 import com.rm.android_fundamentals.legacy.BaseActivity
-import com.rm.android_fundamentals.legacy.mvcSubTopic1
 import com.rm.android_fundamentals.databinding.ActivityMvcactivityBinding
 import com.rm.android_fundamentals.mocknetwork.mock.AndroidVersion
 import com.rm.android_fundamentals.topics.t10_architectures.common.VersionUiState
@@ -68,5 +67,5 @@ class MVCActivity : BaseActivity() {
         super.onDestroy()
     }
 
-    override fun getTitleToolbar(): String = mvcSubTopic1
+    override fun getTitleToolbar(): String = "MVC"
 }
