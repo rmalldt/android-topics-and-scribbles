@@ -9,10 +9,10 @@ import retrofit2.http.Path
 
 interface MockApi {
 
-    @GET("recent-android-versions")
+    @GET("/recent-android-versions")
     suspend fun getRecentAndroidVersions(): List<AndroidVersion>
 
-    @GET("android-version-features/{apiLevel}")
+    @GET("/android-version-features/{apiLevel}")
     suspend fun getAndroidVersionFeatures(@Path("apiLevel") apiLevel: Int): VersionFeatures
 }
 
@@ -22,7 +22,7 @@ fun createMockApi(interceptor: MockNetworkInterceptor): MockApi {
         .build()
 
     val retrofit = Retrofit.Builder()
-        .baseUrl("http://localhost/")
+        .baseUrl("http://localhost")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
